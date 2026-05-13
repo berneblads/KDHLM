@@ -1,0 +1,16 @@
+{
+  "name": "valprogram",
+  "version": "1.0.0",
+  "description": "Interaktiv landningssida for KD Hassleholms valprogram 2026.",
+  "main": "index.html",
+  "scripts": {
+    "start": "vite --host 127.0.0.1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "vite": "^8.0.12"
+  }
+}

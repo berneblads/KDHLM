@@ -1,0 +1,170 @@
+﻿<header class="site-header">
+      <a class="brand" href="#top" aria-label="Till startsidan">
+        <img
+          class="brand-logo"
+          src="assets/HÃ¤ssleholm-sida-bla-300dpi.png"
+          alt="KD HÃ¤ssleholm"
+        />
+      </a>
+
+      <nav aria-label="Huvudnavigering">
+        <a href="#top" data-content="nav.start">Start</a>
+        <a href="#politik" data-content="nav.politics">VÃ¥r politik</a>
+        <a href="#kandidater" data-content="nav.candidates">Kandidater</a>
+        <a href="#pdf" data-content="nav.pdf">Valprogram</a>
+      </nav>
+
+      <a
+        class="header-action"
+        href="https://kristdemokraterna.se/engagera-dig/ansok-om-medlemskap-i-kristdemokraterna"
+        target="_blank"
+        rel="noreferrer"
+        data-content="nav.action"
+      >Bli en del av Team Busch</a>
+    </header>
+
+    <main id="top">
+      <section class="hero" aria-labelledby="hero-title">
+        <img class="hero-image" src="assets/avenyn.jpg" alt="" aria-hidden="true" />
+        <img class="hero-kd-mark" src="assets/KD-logo-vit.png" alt="" aria-hidden="true" />
+        <div class="hero-inner">
+          <div class="hero-copy">
+            <p class="eyebrow" data-content="hero.eyebrow">Kristdemokraterna HÃ¤ssleholm 2026</p>
+            <h1 id="hero-title" data-content="hero.title">Tro pÃ¥ HÃ¤ssleholm!</h1>
+            <p class="lead" data-content="hero.lead">
+              VÃ¥rd, vardag och vÃ¤rderingar. HÃ¤r fÃ¥r vÃ¤ljare en snabb vÃ¤g in i
+              valprogrammet och kan klicka sig vidare bland politikomrÃ¥dena.
+            </p>
+            <div class="hero-actions">
+              <a class="button button-primary" href="#politik" data-content="hero.primaryButton">VÃ¤lj politikomrÃ¥de</a>
+              <a class="button button-secondary" href="#loften" data-content="hero.secondaryButton">Visa konkreta fÃ¶rslag</a>
+            </div>
+          </div>
+
+          <aside class="hero-badge" aria-label="Valprogrammet i korthet">
+            <span data-content="hero.badgeLabel">Viljeinriktning</span>
+            <strong data-content="hero.badgeYear">2026</strong>
+            <p data-content="hero.badgeText">FÃ¶r omsorg, skola, ekonomi, orter och framtidstro.</p>
+          </aside>
+        </div>
+      </section>
+
+      <section class="statement" id="utgangspunkt" aria-labelledby="statement-title">
+        <div class="statement-copy">
+          <p class="eyebrow" data-content="statement.eyebrow">UtgÃ¥ngspunkt</p>
+          <h2 id="statement-title" data-content="statement.title">HÃ¤ssleholm kan bÃ¤ttre</h2>
+          <p data-content="statement.text">
+            Programmet frontas av Simon Berneblad MandegÃ¥rd och Erika Heil Utbult.
+            Det beskriver en kommun med starka orter, engagerade mÃ¤nniskor och rikt
+            fÃ¶reningsliv, men dÃ¤r politiken behÃ¶ver lÃ¤gga mindre kraft pÃ¥ symboler
+            och mer pÃ¥ vardagen som mÃ¤nniskor faktiskt mÃ¶ter.
+          </p>
+        </div>
+        <figure class="candidate-photo">
+          <img
+            src="assets/Toppkandidater.png"
+            alt="Simon Berneblad MandegÃ¥rd och Erika Heil Utbult, toppkandidater fÃ¶r Kristdemokraterna i HÃ¤ssleholm."
+          />
+          <figcaption data-content="statement.caption">Simon Berneblad MandegÃ¥rd & Erika Heil Utbult</figcaption>
+        </figure>
+      </section>
+
+      <section class="politics" id="politik" aria-labelledby="politics-title">
+        <div class="section-top">
+          <div>
+            <p class="eyebrow" data-content="politics.eyebrow">VÃ¥r politik</p>
+            <h2 id="politics-title" data-content="politics.title">Klicka pÃ¥ ett omrÃ¥de</h2>
+          </div>
+        </div>
+
+        <div class="policy-grid" id="topicGrid"></div>
+      </section>
+
+      <section class="focus" id="fokus" aria-labelledby="focus-title">
+        <div class="section-top compact">
+          <div>
+            <p class="eyebrow" data-content="focus.eyebrow">FokusfrÃ¥ga</p>
+            <h2 id="focus-title" data-content="focus.title">VÃ¤lj omrÃ¥de. FÃ¥ beskeden direkt.</h2>
+          </div>
+          <div class="tabs" role="tablist" aria-label="ProgramomrÃ¥den" id="tabs"></div>
+        </div>
+
+        <article class="detail-panel" id="detailPanel" tabindex="-1"></article>
+      </section>
+
+      <section class="candidates-section" id="kandidater" aria-labelledby="candidates-title">
+        <div class="section-top">
+          <div>
+            <p class="eyebrow" data-content="candidates.eyebrow">VÃ¥ra kandidater</p>
+            <h2 id="candidates-title" data-content="candidates.title">MÃ¶t laget bakom programmet</h2>
+            <p data-content="candidates.text">HÃ¥ll muspekaren Ã¶ver ett kort fÃ¶r en snabb presentation.</p>
+          </div>
+        </div>
+        <div class="candidate-grid" id="candidateGrid"></div>
+      </section>
+
+      <section class="promise-section" id="loften" aria-labelledby="promise-title">
+        <div class="section-top">
+          <div>
+            <p class="eyebrow" data-content="promise.eyebrow">FÃ¶rslagskort</p>
+            <h2 id="promise-title" data-content="promise.title">Ett konkret KD-fÃ¶rslag i taget</h2>
+          </div>
+          <p data-content="promise.text">
+            FÃ¶r vÃ¤ljare som vill fÃ¥ grepp snabbt: blÃ¤ddra eller slumpa fram ett
+            fÃ¶rslag ur valprogrammet.
+          </p>
+        </div>
+
+        <div class="promise-layout">
+          <div class="promise-card" id="promiseCard" aria-live="polite"></div>
+          <div class="promise-controls">
+            <button class="icon-button" type="button" id="prevPromise" aria-label="FÃ¶regÃ¥ende fÃ¶rslag">â€¹</button>
+            <a href="#" class="button button-primary" id="readMorePromise" target="_blank" rel="noreferrer">Tryck hÃ¤r fÃ¶r att lÃ¤sa mer om fÃ¶rslaget</a>
+            <button class="icon-button" type="button" id="nextPromise" aria-label="NÃ¤sta fÃ¶rslag">â€º</button>
+          </div>
+        </div>
+      </section>
+
+      <section class="local-section" id="lokalt" aria-labelledby="local-title">
+        <div>
+          <p class="eyebrow" data-content="local.eyebrow">NÃ¤ra dig</p>
+          <h2 id="local-title" data-content="local.title">Hela kommunen ska fungera</h2>
+          <p data-content="local.text">
+            Programmet Ã¥terkommer till lokala utvecklingsplaner, nÃ¤rservice,
+            kollektivtrafik, landsbygdsskolor, tÃ¤tortsmiljon och mÃ¶tesplatser
+            i hela kommunen.
+          </p>
+          <a
+            class="team-link"
+            href="https://kristdemokraterna.se/engagera-dig/ansok-om-medlemskap-i-kristdemokraterna"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <span data-content="local.cta">Bli en del av Team Busch</span>
+          </a>
+        </div>
+        <div class="team-image-wrap">
+          <img src="assets/Tro pÃ¥ HÃ¤ssleholm.png" alt="Tro pÃ¥ HÃ¤ssleholm" />
+        </div>
+      </section>
+
+      <section class="pdf-strip" id="pdf" aria-labelledby="pdf-title">
+        <div>
+          <h2 id="pdf-title" data-content="pdf.title">Vill du lÃ¤sa hela valprogrammet?</h2>
+        </div>
+        <a class="button button-secondary dark" href="Valprogram%20KD%20H%C3%A4ssleholm%202026.pdf" target="_blank" rel="noreferrer">
+          <span data-content="pdf.button">Tryck hÃ¤r</span>
+        </a>
+      </section>
+    </main>
+
+    <footer id="kanaler">
+      <div class="footer-copy">
+        <strong data-content="footer.text">FÃ¶lj oss i vÃ¥ra andra kanaler</strong>
+      </div>
+      <div class="footer-links" aria-label="Sociala kanaler">
+        <a href="https://www.facebook.com/Kristdemokraterna/" target="_blank" rel="noreferrer">Facebook</a>
+        <a href="https://www.instagram.com/kristdemokraterna/" target="_blank" rel="noreferrer">Instagram</a>
+        <a href="#top" data-content="footer.topLink">Till toppen</a>
+      </div>
+    </footer>

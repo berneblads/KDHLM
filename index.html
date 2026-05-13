@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="sv">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Tro på Hässleholm | KD Hässleholm 2026</title>
+    <meta
+      name="description"
+      content="En interaktiv överblick av Kristdemokraterna i Hässleholms valprogram 2026."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800;900&family=Barlow+Semi+Condensed:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" type="image/png" href="assets/KD-logo-vit.png" />
+    <link rel="apple-touch-icon" href="assets/KD-logo-vit.png" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="#top" aria-label="Till startsidan">
+        <img
+          class="brand-logo"
+          src="assets/Hässleholm-sida-bla-300dpi.png"
+          alt="KD Hässleholm"
+        />
+      </a>
+
+      <nav aria-label="Huvudnavigering">
+        <a href="#top" data-content="nav.start">Start</a>
+        <a href="#politik" data-content="nav.politics">Vår politik</a>
+        <a href="#kandidater" data-content="nav.candidates">Kandidater</a>
+        <a href="#pdf" data-content="nav.pdf">Valprogram</a>
+      </nav>
+
+      <a
+        class="header-action"
+        href="https://kristdemokraterna.se/engagera-dig/ansok-om-medlemskap-i-kristdemokraterna"
+        target="_blank"
+        rel="noreferrer"
+        data-content="nav.action"
+      >Bli en del av Team Busch</a>
+    </header>
+
+    <main id="top">
+      <section class="hero" aria-labelledby="hero-title">
+        <img class="hero-image" src="assets/avenyn.jpg" alt="" aria-hidden="true" />
+        <img class="hero-kd-mark" src="assets/KD-logo-vit.png" alt="" aria-hidden="true" />
+        <div class="hero-inner">
+          <div class="hero-copy">
+            <p class="eyebrow" data-content="hero.eyebrow">Kristdemokraterna Hässleholm 2026</p>
+            <h1 id="hero-title" data-content="hero.title">Tro på Hässleholm!</h1>
+            <p class="lead" data-content="hero.lead">
+              Vård, vardag och värderingar. Här får väljare en snabb väg in i
+              valprogrammet och kan klicka sig vidare bland politikområdena.
+            </p>
+            <div class="hero-actions">
+              <a class="button button-primary" href="#politik" data-content="hero.primaryButton">Välj politikområde</a>
+              <a class="button button-secondary" href="#loften" data-content="hero.secondaryButton">Visa konkreta förslag</a>
+            </div>
+          </div>
+
+          <aside class="hero-badge" aria-label="Valprogrammet i korthet">
+            <span data-content="hero.badgeLabel">Viljeinriktning</span>
+            <strong data-content="hero.badgeYear">2026</strong>
+            <p data-content="hero.badgeText">För omsorg, skola, ekonomi, orter och framtidstro.</p>
+          </aside>
+        </div>
+      </section>
+
+      <section class="statement" id="utgangspunkt" aria-labelledby="statement-title">
+        <div class="statement-copy">
+          <p class="eyebrow" data-content="statement.eyebrow">Utgångspunkt</p>
+          <h2 id="statement-title" data-content="statement.title">Hässleholm kan bättre</h2>
+          <p data-content="statement.text">
+            Programmet frontas av Simon Berneblad Mandegård och Erika Heil Utbult.
+            Det beskriver en kommun med starka orter, engagerade människor och rikt
+            föreningsliv, men där politiken behöver lägga mindre kraft på symboler
+            och mer på vardagen som människor faktiskt möter.
+          </p>
+        </div>
+        <figure class="candidate-photo">
+          <img
+            src="assets/Toppkandidater.png"
+            alt="Simon Berneblad Mandegård och Erika Heil Utbult, toppkandidater för Kristdemokraterna i Hässleholm."
+          />
+          <figcaption data-content="statement.caption">Simon Berneblad Mandegård & Erika Heil Utbult</figcaption>
+        </figure>
+      </section>
+
+      <section class="politics" id="politik" aria-labelledby="politics-title">
+        <div class="section-top">
+          <div>
+            <p class="eyebrow" data-content="politics.eyebrow">Vår politik</p>
+            <h2 id="politics-title" data-content="politics.title">Klicka på ett område</h2>
+          </div>
+        </div>
+
+        <div class="policy-grid" id="topicGrid"></div>
+      </section>
+
+      <section class="focus" id="fokus" aria-labelledby="focus-title">
+        <div class="section-top compact">
+          <div>
+            <p class="eyebrow" data-content="focus.eyebrow">Fokusfråga</p>
+            <h2 id="focus-title" data-content="focus.title">Välj område. Få beskeden direkt.</h2>
+          </div>
+          <div class="tabs" role="tablist" aria-label="Programområden" id="tabs"></div>
+        </div>
+
+        <article class="detail-panel" id="detailPanel" tabindex="-1"></article>
+      </section>
+
+      <section class="candidates-section" id="kandidater" aria-labelledby="candidates-title">
+        <div class="section-top">
+          <div>
+            <p class="eyebrow" data-content="candidates.eyebrow">Våra kandidater</p>
+            <h2 id="candidates-title" data-content="candidates.title">Möt laget bakom programmet</h2>
+            <p data-content="candidates.text">Håll muspekaren över ett kort för en snabb presentation.</p>
+          </div>
+        </div>
+        <div class="candidate-grid" id="candidateGrid"></div>
+      </section>
+
+      <section class="promise-section" id="loften" aria-labelledby="promise-title">
+        <div class="section-top">
+          <div>
+            <p class="eyebrow" data-content="promise.eyebrow">Förslagskort</p>
+            <h2 id="promise-title" data-content="promise.title">Ett konkret KD-förslag i taget</h2>
+          </div>
+          <p data-content="promise.text">
+            För väljare som vill få grepp snabbt: bläddra eller slumpa fram ett
+            förslag ur valprogrammet.
+          </p>
+        </div>
+
+        <div class="promise-layout">
+          <div class="promise-card" id="promiseCard" aria-live="polite"></div>
+          <div class="promise-controls">
+            <button class="icon-button" type="button" id="prevPromise" aria-label="Föregående förslag">‹</button>
+            <a href="#" class="button button-primary" id="readMorePromise" target="_blank" rel="noreferrer">Tryck här för att läsa mer om förslaget</a>
+            <button class="icon-button" type="button" id="nextPromise" aria-label="Nästa förslag">›</button>
+          </div>
+        </div>
+      </section>
+
+      <section class="local-section" id="lokalt" aria-labelledby="local-title">
+        <div>
+          <p class="eyebrow" data-content="local.eyebrow">Nära dig</p>
+          <h2 id="local-title" data-content="local.title">Hela kommunen ska fungera</h2>
+          <p data-content="local.text">
+            Programmet återkommer till lokala utvecklingsplaner, närservice,
+            kollektivtrafik, landsbygdsskolor, tätortsmiljon och mötesplatser
+            i hela kommunen.
+          </p>
+          <a
+            class="team-link"
+            href="https://kristdemokraterna.se/engagera-dig/ansok-om-medlemskap-i-kristdemokraterna"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <span data-content="local.cta">Bli en del av Team Busch</span>
+          </a>
+        </div>
+        <div class="team-image-wrap">
+          <img src="assets/Tro på Hässleholm.png" alt="Tro på Hässleholm" />
+        </div>
+      </section>
+
+      <section class="pdf-strip" id="pdf" aria-labelledby="pdf-title">
+        <div>
+          <h2 id="pdf-title" data-content="pdf.title">Vill du läsa hela valprogrammet?</h2>
+        </div>
+        <a class="button button-secondary dark" href="Valprogram%20KD%20H%C3%A4ssleholm%202026.pdf" target="_blank" rel="noreferrer">
+          <span data-content="pdf.button">Tryck här</span>
+        </a>
+      </section>
+    </main>
+
+    <footer id="kanaler">
+      <div class="footer-copy">
+        <strong data-content="footer.text">Följ oss i våra andra kanaler</strong>
+      </div>
+      <div class="footer-links" aria-label="Sociala kanaler">
+        <a href="https://www.facebook.com/Kristdemokraterna/" target="_blank" rel="noreferrer">Facebook</a>
+        <a href="https://www.instagram.com/kristdemokraterna/" target="_blank" rel="noreferrer">Instagram</a>
+        <a href="#top" data-content="footer.topLink">Till toppen</a>
+      </div>
+    </footer>
+
+    <script src="content.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>

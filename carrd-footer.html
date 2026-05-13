@@ -1,0 +1,791 @@
+﻿<script>
+window.siteContent = {
+  pageTitle: "Tro pÃ¥ HÃ¤ssleholm | KD HÃ¤ssleholm",
+  metaDescription:
+    "En interaktiv Ã¶verblick av Kristdemokraterna i HÃ¤ssleholms valprogram 2026.",
+  nav: {
+    start: "Start",
+    statement: "UtgÃ¥ngspunkt",
+    politics: "VÃ¥r politik",
+    focus: "FokusfrÃ¥ga",
+    candidates: "Kandidater",
+    proposals: "FÃ¶rslag",
+    local: "Lokalt",
+    pdf: "Valprogram",
+    channels: "Kanaler",
+    action: "Bli en del av Team Busch"
+  },
+  hero: {
+    eyebrow: "Kristdemokraterna HÃ¤ssleholm",
+    title: "Tro pÃ¥ HÃ¤ssleholm!",
+    lead: "",
+    primaryButton: "LÃ¤s kommunala fÃ¶rslag",
+    secondaryButton: "LÃ¤s nationella fÃ¶rslag",
+    badgeLabel: "Viljeinriktning fÃ¶r",
+    badgeYear: "2026 - 2030",
+    badgeText: "FÃ¶r omsorg, skola, ekonomi, orter och framtidstro."
+  },
+  statement: {
+    eyebrow: "UtgÃ¥ngspunkt",
+    title: "HÃ¤ssleholm kan bÃ¤ttre",
+    text:
+      "HÃ¤ssleholm Ã¤r i grunden en stark kommun med engagerade mÃ¤nniskor, livskraftiga orter och ett rikt fÃ¶reningsliv. Men styrningen har tappat fokus pÃ¥ det viktigaste: att fÃ¥ vardagen att fungera. Trots mÃ¥nga planer och visioner upplever invÃ¥narna en kommun som blivit dyrare, mer centraliserad och mindre lyhÃ¶rd. Kristdemokraterna vill fÃ¶rÃ¤ndra en styrmodell som inte levererar och sÃ¤tta mÃ¤nniskan, familjen, fÃ¶reningslivet, landsbygden och kransorterna i centrum.",
+    imageAlt:
+      "Simon Berneblad MandegÃ¥rd och Erika Heil Utbult, toppkandidater fÃ¶r Kristdemokraterna i HÃ¤ssleholm.",
+    caption: "Simon Berneblad MandegÃ¥rd & Erika Heil Utbult - toppkandidater"
+  },
+  politics: {
+    eyebrow: "VÃ¥r politik",
+    title: "Klicka pÃ¥ ett omrÃ¥de"
+  },
+  focus: {
+    eyebrow: "FokusfrÃ¥ga",
+    title: "VÃ¤lj omrÃ¥de. FÃ¥ beskeden direkt.",
+    selectedEyebrow: "Valt omrÃ¥de",
+    summaryTitle: "Tre saker att ta med sig",
+    proposalsTitle: "FÃ¶rslagen, kort fÃ¶rklarade",
+    reasonLabel: "DÃ¤rfÃ¶r:",
+    readMore: "LÃ¤s mer"
+  },
+  promise: {
+    eyebrow: "FÃ¶rslagskort",
+    text: "",
+    randomButton: "Tryck hÃ¤r fÃ¶r att lÃ¤sa nytt fÃ¶rslag",
+    prevLabel: "FÃ¶regÃ¥ende nationella fÃ¶rslag",
+    nextLabel: "NÃ¤sta nationella fÃ¶rslag",
+    backgroundImage: "assets/Ebba.jpg"
+  },
+  nationalProposals: [
+    {
+      area: "Familj",
+      title: "GÃ¶r fÃ¶rÃ¤ldrafÃ¶rsÃ¤kringen mer flexibel",
+      text:
+        "KD vill sÃ¤ga nej till kvotering, skydda fÃ¶rÃ¤ldraledigas inkomst lÃ¤ngre och lÃ¥ta fler dagar anvÃ¤ndas som dubbeldagar.",
+      source: "https://kristdemokraterna.se/var-politik/politikomraden/familj"
+    },
+    {
+      area: "Familj",
+      title: "InfÃ¶r tak fÃ¶r smÃ¥barnsgrupper i fÃ¶rskolan",
+      text:
+        "KD vill lagstifta om max 12 barn i smÃ¥barnsgrupper fÃ¶r mer trygghet, anknytning och tid fÃ¶r varje barn.",
+      source: "https://kristdemokraterna.se/var-politik/politikomraden/familj"
+    },
+    {
+      area: "Familj",
+      title: "StÃ¤rk fÃ¶rÃ¤ldrastÃ¶d och familjerÃ¥dgivning",
+      text:
+        "KD vill att kommuner ska erbjuda fÃ¶rÃ¤ldrastÃ¶dsprogram och sÃ¤nka trÃ¶sklarna till familjerÃ¥dgivning.",
+      source: "https://kristdemokraterna.se/var-politik/politikomraden/familj"
+    },
+    {
+      area: "Bostad",
+      title: "GÃ¶r bostadsmarknaden mer rÃ¶rlig",
+      text:
+        "KD vill ta bort taket fÃ¶r uppskov pÃ¥ reavinstskatten vid ny bostad och kraftigt reducera amorteringskraven.",
+      source: "https://kristdemokraterna.se/var-politik/politikomraden/bostad"
+    },
+    {
+      area: "Bostad",
+      title: "GÃ¶r det mÃ¶jligt fÃ¶r fler att Ã¤ga sitt hem",
+      text:
+        "KD vill anvÃ¤nda startlÃ¥n, bosparande och fÃ¶rÃ¤ndrade tomtrÃ¤ttsregler fÃ¶r att fler med vanliga inkomster ska kunna Ã¤ga bostad.",
+      source: "https://kristdemokraterna.se/var-politik/politikomraden/bostad"
+    },
+    {
+      area: "Bostad",
+      title: "Minska krÃ¥nglet fÃ¶r den som vill bygga",
+      text:
+        "KD vill fÃ¶renkla regler sÃ¥ fler kan bygga ut, dela upp bostÃ¤der och skapa hem pÃ¥ redan anvÃ¤nd tomtmark.",
+      source: "https://kristdemokraterna.se/var-politik/politikomraden/bostad"
+    },
+    {
+      area: "Jord & skogsbruk",
+      title: "Ã–ka svensk sjÃ¤lvfÃ¶rsÃ¶rjning",
+      text:
+        "KD vill stÃ¤rka lÃ¶nsamheten i svenskt jordbruk sÃ¥ Sverige kan producera mer livsmedel Ã¤ven i fredstid.",
+      source: "https://kristdemokraterna.se/var-politik/politikomraden/jord--skogsbruk"
+    },
+    {
+      area: "Jord & skogsbruk",
+      title: "Minska regelkrÃ¥nglet fÃ¶r bÃ¶nder",
+      text:
+        "KD vill ha fÃ¤rre men tydligare regler fÃ¶r jordbruksnÃ¤ringen sÃ¥ lantbrukare fÃ¥r bÃ¤ttre fÃ¶rutsÃ¤ttningar att producera.",
+      source: "https://kristdemokraterna.se/var-politik/politikomraden/jord--skogsbruk"
+    },
+    {
+      area: "Jord & skogsbruk",
+      title: "VÃ¤rna Ã¤ganderÃ¤tten i skogen",
+      text:
+        "KD vill stÃ¥ upp fÃ¶r enskilt Ã¤gande och brukande av skog under frihet och ansvar.",
+      source: "https://kristdemokraterna.se/var-politik/politikomraden/jord--skogsbruk"
+    },
+    {
+      area: "Ã„ldre",
+      title: "Mer medicinsk kompetens i Ã¤ldreomsorgen",
+      text:
+        "KD vill stÃ¤rka kommunal vÃ¥rd med bÃ¤ttre medicinsk kompetens och mÃ¶jlighet fÃ¶r kommuner att sÃ¤kra lÃ¤kartillgÃ¥ng.",
+      source: "https://kristdemokraterna.se/var-politik/politikomraden/aldre"
+    },
+    {
+      area: "Ã„ldre",
+      title: "InfÃ¶r Ã¤ldreboendegaranti",
+      text:
+        "KD vill ge personer Ã¶ver 85 Ã¥r en lagstadgad rÃ¤tt till anpassat boende nÃ¤r de sjÃ¤lva vill och behÃ¶ver det.",
+      source: "https://kristdemokraterna.se/var-politik/politikomraden/aldre"
+    },
+    {
+      area: "Ã„ldre",
+      title: "FÃ¶rbÃ¤ttra villkoren fÃ¶r omsorgspersonal",
+      text:
+        "KD vill minska delade turer, stÃ¤rka medarbetarnÃ¶jdheten och avlasta chefer i Ã¤ldreomsorgen.",
+      source: "https://kristdemokraterna.se/var-politik/politikomraden/aldre"
+    },
+    {
+      area: "VÃ¥rd & omsorg",
+      title: "InrÃ¤tta nationell vÃ¥rdfÃ¶rmedling",
+      text:
+        "KD vill anvÃ¤nda ledig vÃ¥rdkapacitet i hela landet sÃ¥ patienter snabbare kan fÃ¥ vÃ¥rd nÃ¤r vÃ¥rdgarantin passerats.",
+      source: "https://kristdemokraterna.se/var-politik/politikomraden/vard--omsorg"
+    },
+    {
+      area: "VÃ¥rd & omsorg",
+      title: "Fler vÃ¥rdplatser och starkare kapacitet",
+      text:
+        "KD vill Ã¶ka antalet vÃ¥rdplatser och koppla statlig ersÃ¤ttning till minskade Ã¶verbelÃ¤ggningar och bÃ¤ttre kapacitet.",
+      source: "https://kristdemokraterna.se/var-politik/politikomraden/vard--omsorg"
+    },
+    {
+      area: "VÃ¥rd & omsorg",
+      title: "Ge staten huvudansvar fÃ¶r sjukvÃ¥rden",
+      text:
+        "KD vill samla huvudansvaret nationellt fÃ¶r en mer jÃ¤mlik, effektiv och hÃ¶gkvalitativ vÃ¥rd i hela landet.",
+      source: "https://kristdemokraterna.se/var-politik/politikomraden/vard--omsorg"
+    }
+  ],
+  local: {
+    eyebrow: "Kristdemokraterna",
+    title: "Tror pÃ¥ HÃ¤ssleholm",
+    text: "",
+    cta: "Bli en del av Team Busch",
+    ctaUrl:
+      "https://kristdemokraterna.se/engagera-dig/ansok-om-medlemskap-i-kristdemokraterna",
+    image: "assets/Tro pÃ¥ HÃ¤ssleholm.png",
+    imageAlt: "Tro pÃ¥ HÃ¤ssleholm"
+  },
+  candidatesSection: {
+    eyebrow: "VÃ¥ra kandidater",
+    title: "MÃ¶t KD-laget i HÃ¤ssleholm",
+    text: "Tryck pÃ¥ korten fÃ¶r en kortare presentation av kandidaterna.",
+    candidates: [
+     {
+  name: "Simon Berneblad MandegÃ¥rd",
+  role: "#1 pÃ¥ kommunlistan",
+  description: "Driver frÃ¥gor om Ã¤ldreomsorg, trygghet och ett rikt kultur- och fritidsliv.",
+  image: "assets/SB.jpg"
+},
+{
+  name: "Erika Heil Utbult",
+  role: "#2 pÃ¥ kommunlistan",
+  description: "Fokuserar pÃ¥ omsorg, nÃ¤rhet och ett starkare lokalsamhÃ¤lle.",
+  image: "assets/EHB.jpg",
+  imagePosition: "center 58%",
+  imageScale: 1.28
+},
+{
+  name: "Christer Caesar",
+  role: "#3 pÃ¥ kommunlistan",
+  description: "Vill se ordning, ansvar och lÃ¥ngsiktighet i kommunens ekonomi och styrning.",
+  image: "assets/CC.jpg",
+  imagePosition: "center 58%"
+},
+{
+  name: "Elias HÃ¶ghÃ¤ll",
+  role: "#4 pÃ¥ kommunlistan",
+  description: "Lyfter ungas villkor, framtidstro och mÃ¶jligheten att vÃ¤xa upp och stanna i kommunen.",
+  image: "assets/EH.jpg",
+  imagePosition: "right center",
+  imageScale: 1.3,
+  imageX: "-10%",
+  imageY: "0"
+},
+{
+  name: "Mats BjÃ¶rklund",
+  role: "#5 pÃ¥ kommunlistan",
+  description: "Driver frÃ¥gor om socialtansvar, service och utveckling.",
+  image: "assets/Mats B.jpg",
+  imagePosition: "42% center",
+  imageScale: 1.15
+},
+{
+  name: "PÃ¤r Palmgren",
+  role: "#6 pÃ¥ kommunlistan",
+  description: "Fokuserar pÃ¥ infrastruktursfrÃ¥gor, en kommun som fÃ¶rvaltar ekonomin vÃ¤l och en kommun som hÃ¥ller ihop.",
+  image: "assets/PÃ¤r Palmgren.jpg"
+},
+{
+  name: "Roland Blomqvist",
+  role: "#7 pÃ¥ kommunlistan",
+  description: "Vill stÃ¤rka samhÃ¤llsplanering, infrastruktur och minska krÃ¥nglet fÃ¶r medborgaren.",
+  image: "assets/Roland Blomqvist.png"
+},
+{
+  name: "Tobias Eriksson",
+  role: "#8 pÃ¥ kommunlistan",
+  description: "Driver frÃ¥gor om trygghet, digital sÃ¤kerhet och en modernare kommunal service.",
+  image: "assets/Tobias Eriksson.jpg",
+  imagePosition: "center 60%",
+  imageScale: 1.02
+},
+{
+  name: "Marie Juhlin",
+  role: "#9 pÃ¥ kommunlistan",
+  description: "Fokuserar pÃ¥ vÃ¥rd, omsorg och trygghet fÃ¶r Ã¤ldre och anhÃ¶riga.",
+  image: "assets/marie Julhin.jpg",
+  imagePosition: "center center",
+  imageX: "0",
+  imageY: "-8%"
+},
+{
+  name: "Gilbert Nathell",
+  role: "#10 pÃ¥ kommunlistan",
+  description: "Lyfter vikten av en fungerande skolgÃ¥ng, tryggheten och vikten av levande orter i hela kommunen.",
+  image: "assets/Toppkandidater.png"
+}
+    ]
+  },
+  pdf: {
+    eyebrow: "",
+    title: "Vill du lÃ¤sa hela valprogrammet?",
+    button: "Tryck hÃ¤r"
+  },
+  footer: {
+    text: "FÃ¶lj oss i vÃ¥ra andra kanaler",
+    topLink: "Till toppen"
+  },
+  topicImages: {
+    O: "assets/o.jpg",
+    S: "assets/S.png",
+    V: "assets/V.png",
+    M: "assets/M.jpg",
+    K: "assets/SK.jpg",
+    H: "assets/H.jpg",
+    C: "assets/C.jpg"
+  },
+  explanations: {
+    relatives:
+      "GÃ¶r det lÃ¤ttare fÃ¶r familjer och nÃ¤rstÃ¥ende som redan tar ett stort ansvar i vardagen.",
+    elderly:
+      "Flyttar fokus frÃ¥n sena insatser till trygghet, gemenskap och fÃ¶rebyggande arbete tidigare.",
+    school:
+      "Ska ge barn tydligare vuxna, bÃ¤ttre studiero och stÃ¶d innan smÃ¥ problem blir stora.",
+    transparency:
+      "GÃ¶r det enklare fÃ¶r invÃ¥nare att se hur kommunen anvÃ¤nder gemensamma pengar.",
+    maintenance:
+      "Prioriterar sÃ¥dant som mÃ¤rks i vardagen: fungerande lokaler, trygg miljÃ¶ och lÃ¥ngsiktigt ansvar.",
+    transport:
+      "Knyter ihop orterna bÃ¤ttre sÃ¥ fler kan ta sig till arbete, skola, kultur och fÃ¶reningsliv.",
+    campus:
+      "Bygger framtidstro genom utbildning, kompetensfÃ¶rsÃ¶rjning och fler vÃ¤gar till jobb.",
+    civilSociety:
+      "Tar vara pÃ¥ lokala krafter som ofta finns nÃ¤rmare mÃ¤nniskor Ã¤n kommunens organisation.",
+    housing:
+      "Ska gÃ¶ra det lÃ¤ttare att hitta ett boende som passar olika livsskeden och familjesituationer.",
+    fallback:
+      "Visar hur {topic} kan bli mer konkret i mÃ¤nniskors vardag, inte bara en kommunal process."
+  },
+  topics: [
+    {
+      id: "omsorg",
+      label: "Omsorg",
+      mark: "O",
+      accent: "#ffd62f",
+      title: "En tydlig prioritering: omsorg",
+      intro:
+        "Vardagen ska fungera fÃ¶rst. Programmet lÃ¤gger tyngd pÃ¥ kvalitet, trygghet, vÃ¤rdighet och bÃ¤ttre arbetsvillkor i omsorgen.",
+      bullets: [
+        "Prioritera omsorgens kvalitet, trygghet och vÃ¤rdighet.",
+        "StÃ¶rre mÃ¶jlighet att vÃ¤lja kÃ¶n pÃ¥ personal i intima situationer.",
+        "UnderhÃ¥ll, sÃ¤kerhet och tillgÃ¤nglighet pÃ¥ Ã¤ldreboenden.",
+        "Omtag kring mÃ¥ltidsorganisationen med nÃ¤ringsrik mat och bemÃ¶tande.",
+        "FÃ¶rebyggande hembesÃ¶k frÃ¥n 75 Ã¥r.",
+        "StÃ¤rkt anhÃ¶rigstÃ¶d och avlÃ¶sning.",
+        "AnstÃ¤lla geriatriker inom kommunal Ã¤ldreomsorg.",
+        "Fria arbetsskor och utbildningssjukskÃ¶terskor.",
+        "Bostad fÃ¶rst och minskad hemlÃ¶shet.",
+        "Fritt intrÃ¤de pÃ¥ kommunens badanlÃ¤ggningar fÃ¶r alla Ã¶ver 75 Ã¥r."
+      ]
+    },
+    {
+      id: "skola",
+      label: "Skola",
+      mark: "S",
+      accent: "#f1be8a",
+      title: "Skolan som nav",
+      intro:
+        "Skolan ska ge kunskap, trygghet och framtidstro. Ingen elev ska lÃ¤mnas efter och ingen elev ska hÃ¥llas tillbaka.",
+      bullets: [
+        "SlÃ¤ppa fram idÃ©burna, privata och fÃ¶reningsdrivna alternativ.",
+        "VÃ¤rna fÃ¶rÃ¤ldrars mÃ¶jlighet att vÃ¤lja skola och barnomsorg.",
+        "Mer tid fÃ¶r lÃ¤sning, skrivande och matematik.",
+        "Tidiga insatser innan problem vÃ¤xer.",
+        "Tydligare ordningsregler och bÃ¤ttre stÃ¶d till lÃ¤rare och rektorer.",
+        "Utveckla elevhÃ¤lsan vid psykisk ohÃ¤lsa, skolfrÃ¥nvaro och sÃ¤rskilt stÃ¶d.",
+        "Fler elever ska fÃ¥ lÃ¤xhjÃ¤lp och stÃ¶dinsatser.",
+        "Se Ã¶ver skolmiljÃ¶ernas betydelse fÃ¶r trygghet, rÃ¶relse och trivsel."
+      ]
+    },
+    {
+      id: "varderingar",
+      label: "VÃ¤rderingar",
+      mark: "V",
+      accent: "#8aabac",
+      title: "VÃ¤rderingar som hÃ¥ller ihop HÃ¤ssleholm",
+      intro:
+        "Politiken ska handla om mÃ¤nniskor i vardagen, inte bara budgetrader och organisationsscheman.",
+      bullets: [
+        "Trygghet och respekt i skola, fritid, omsorg och offentliga miljÃ¶er.",
+        "VÃ¤rna familjens betydelse och fÃ¶rÃ¤ldrars delaktighet.",
+        "Kommunalt trygghetslÃ¶fte fÃ¶r Ã¤ldre.",
+        "StÃ¤rka kulturarv, mÃ¶tesplatser, bibliotek och hembygdsfÃ¶reningar.",
+        "Redovisa hur stÃ¶rre beslut pÃ¥verkar mÃ¤nniskors vardag.",
+        "Lokala utvecklingsplaner fÃ¶r stÃ¶rre byar och kommundelar."
+      ]
+    },
+    {
+      id: "motesplatser",
+      label: "MÃ¶tesplatser",
+      mark: "M",
+      accent: "#8fa45a",
+      title: "Ã„ldre mÃ¶tesplatser 2.0",
+      intro:
+        "TrÃ¤ffpunkter ska bli aktiva nav fÃ¶r gemenskap, hÃ¤lsa och fÃ¶rebyggande arbete i hela kommunen.",
+      bullets: [
+        "Samlat uppdrag, utvecklingsplan och underhÃ¥llsplan fÃ¶r trÃ¤ffpunkter.",
+        "LikvÃ¤rdig service oavsett bostadsort.",
+        "FÃ¶rebyggande uppdrag inom gemenskap, hÃ¤lsa och trygghet.",
+        "Samarbete med civilsamhÃ¤lle, fÃ¶reningar, kyrkor och Region SkÃ¥ne.",
+        "NÃ¤rmare koppling till hemtjÃ¤nst och anhÃ¶rigstÃ¶d.",
+        "HÃ¤lsofrÃ¤mjande aktiviteter och digitalt stÃ¶d pÃ¥ alla orter.",
+        "FÃ¶lja upp effekter pÃ¥ ensamhet, hÃ¤lsa och trygghet."
+      ]
+    },
+    {
+      id: "ekonomi",
+      label: "Skattekronor",
+      mark: "K",
+      accent: "#ffd62f",
+      title: "Ansvar fÃ¶r varje skattekrona",
+      intro:
+        "Ordning i ekonomin beskrivs som en fÃ¶rutsÃ¤ttning fÃ¶r trygg vÃ¤lfÃ¤rd. Fokus ligger pÃ¥ kÃ¤rnuppdrag, transparens och minskad administration.",
+      bullets: [
+        "Ã–versyn av kommunens fastighetsbestÃ¥nd.",
+        "SÃ¤ga nej till projekt utan tydlig vardagsnytta.",
+        "Samlad underhÃ¥llsplan fÃ¶r skolor, omsorgsboenden och offentliga miljÃ¶er.",
+        "Ã–ppet bidragsregister fÃ¶r kommunens verksamhetsbidrag.",
+        "Ã–ppen plattform fÃ¶r overheadfunktioner och yrkestitlar.",
+        "Redovisa effekter nÃ¤r service fÃ¶rÃ¤ndras eller centraliseras.",
+        "Minska onÃ¶dig administration i kommunledningsfÃ¶rvaltningen.",
+        "Samordna kommunikatÃ¶rer och nÃ¤ringslivsavdelning."
+      ]
+    },
+    {
+      id: "kommun",
+      label: "VÃ¥r kommun",
+      mark: "H",
+      accent: "#f1be8a",
+      title: "Hela kommunen ska fungera pÃ¥ riktigt",
+      intro:
+        "Likabehandling betyder att alla tas pÃ¥ allvar. Programmet vill anpassa politiken efter orters olika villkor.",
+      bullets: [
+        "Grundpaket av service, trygghet och mÃ¶tesplatser i kransorterna.",
+        "TÃ¤tortsmiljon fÃ¶r lokalt engagemang och investeringar.",
+        "Arkitekturpolicy med traditionella estetiska vÃ¤rden.",
+        "Fler villor, smÃ¥hus och radhus fÃ¶r familjer och seniorer.",
+        "StÃ¤rkt nÃ¤rservice pÃ¥ biblioteken.",
+        "SÃ¤songsblommor och dekoration i alla tÃ¤torter.",
+        "Bevara landsbygdsskolor dÃ¤r det Ã¤r fÃ¶rsvarbart.",
+        "Fler avgÃ¥ngar frÃ¥n kransorter och PÃ¥gatÃ¥gsstation i Finja.",
+        "KvÃ¤lls- och nattrafik i samverkan med Region SkÃ¥ne.",
+        "Stadspulsbiljett fÃ¶r evenemang och aktiviteter."
+      ]
+    },
+    {
+      id: "campus",
+      label: "Campus",
+      mark: "C",
+      accent: "#8aabac",
+      title: "Campus HÃ¤ssleholm: framtidens vÃ¤g",
+      intro:
+        "HÃ¤ssleholm ska vÃ¤xa genom utbildning, kompetens och samverkan mellan hÃ¶gre utbildning, yrkeshÃ¶gskola, innovation och nÃ¤ringsliv.",
+      bullets: [
+        "Arbeta fÃ¶r hÃ¶gskolefilial eller egen hÃ¶gskola i samarbete med lÃ¤rosÃ¤ten.",
+        "Stegvis uppbyggt spÃ¥r mot examensrÃ¤tt och sÃ¤rskild profil.",
+        "MÃ¶jliggÃ¶ra student- och forskarbostÃ¤der nÃ¤ra campus.",
+        "Forskningsprojekt med kommunala fÃ¶rvaltningar.",
+        "Knyta campus till Norra Station och gamla Norra SkÃ¥ne-huset.",
+        "Co-working, inkubatorer och testbÃ¤ddar i VÃ¤stra centrum.",
+        "Driva finansiering och etablering regionalt och nationellt.",
+        "Integrera yrkeshÃ¶gskoleutbildningar som Ã¶vergÃ¥ng mot arbetsliv och hÃ¶gre utbildning."
+      ]
+    }
+  ]
+};
+
+const content = window.siteContent;
+const topics = content.topics;
+const topicImages = content.topicImages;
+
+const topicGrid = document.querySelector("#topicGrid");
+const tabs = document.querySelector("#tabs");
+const detailPanel = document.querySelector("#detailPanel");
+const promiseCard = document.querySelector("#promiseCard");
+const candidateGrid = document.querySelector("#candidateGrid");
+let activeTopic = topics[0].id;
+let promiseIndex = 0;
+let activeProposalIndex = 0;
+
+const promises = content.nationalProposals;
+
+function setText(selector, value) {
+  const element = document.querySelector(selector);
+  if (!element) return;
+  element.textContent = value || "";
+  element.hidden = value === "";
+}
+
+function renderStaticContent() {
+  document.title = content.pageTitle;
+  document.querySelector('meta[name="description"]').setAttribute("content", content.metaDescription);
+
+  setText('[data-content="nav.start"]', content.nav.start);
+  setText('[data-content="nav.statement"]', content.nav.statement);
+  setText('[data-content="nav.politics"]', content.nav.politics);
+  setText('[data-content="nav.focus"]', content.nav.focus);
+  setText('[data-content="nav.candidates"]', content.nav.candidates);
+  setText('[data-content="nav.proposals"]', content.nav.proposals);
+  setText('[data-content="nav.local"]', content.nav.local);
+  setText('[data-content="nav.pdf"]', content.nav.pdf);
+  setText('[data-content="nav.channels"]', content.nav.channels);
+  setText('[data-content="nav.action"]', content.nav.action);
+
+  setText('[data-content="hero.eyebrow"]', content.hero.eyebrow);
+  setText('[data-content="hero.title"]', content.hero.title);
+  setText('[data-content="hero.lead"]', content.hero.lead);
+  setText('[data-content="hero.primaryButton"]', content.hero.primaryButton);
+  setText('[data-content="hero.secondaryButton"]', content.hero.secondaryButton);
+  setText('[data-content="hero.badgeLabel"]', content.hero.badgeLabel);
+  setText('[data-content="hero.badgeYear"]', content.hero.badgeYear);
+  setText('[data-content="hero.badgeText"]', content.hero.badgeText);
+
+  setText('[data-content="statement.eyebrow"]', content.statement.eyebrow);
+  setText('[data-content="statement.title"]', content.statement.title);
+  setText('[data-content="statement.text"]', content.statement.text);
+  setText('[data-content="statement.caption"]', content.statement.caption);
+  document.querySelector(".candidate-photo img").alt = content.statement.imageAlt;
+
+  setText('[data-content="politics.eyebrow"]', content.politics.eyebrow);
+  setText('[data-content="politics.title"]', content.politics.title);
+  setText('[data-content="focus.eyebrow"]', content.focus.eyebrow);
+  setText('[data-content="focus.title"]', content.focus.title);
+
+  setText('[data-content="promise.eyebrow"]', content.promise.eyebrow);
+  setText('[data-content="promise.title"]', content.promise.title);
+  setText('[data-content="promise.text"]', content.promise.text);
+  setText('[data-content="promise.randomButton"]', content.promise.randomButton);
+  document.querySelector("#prevPromise").setAttribute("aria-label", content.promise.prevLabel);
+  document.querySelector("#nextPromise").setAttribute("aria-label", content.promise.nextLabel);
+  document
+    .querySelector(".promise-section")
+    .style.setProperty("--promise-bg", `url("${content.promise.backgroundImage}")`);
+
+  setText('[data-content="local.eyebrow"]', content.local.eyebrow);
+  setText('[data-content="local.title"]', content.local.title);
+  setText('[data-content="local.text"]', content.local.text);
+  setText('[data-content="local.cta"]', content.local.cta);
+  document.querySelector(".team-link").href = content.local.ctaUrl || "#";
+  document.querySelector(".team-image-wrap img").src = content.local.image;
+  document.querySelector(".team-image-wrap img").alt = content.local.imageAlt;
+
+  setText('[data-content="candidates.eyebrow"]', content.candidatesSection.eyebrow);
+  setText('[data-content="candidates.title"]', content.candidatesSection.title);
+  setText('[data-content="candidates.text"]', content.candidatesSection.text);
+
+  setText('[data-content="pdf.eyebrow"]', content.pdf.eyebrow);
+  setText('[data-content="pdf.title"]', content.pdf.title);
+  setText('[data-content="pdf.button"]', content.pdf.button);
+  setText('[data-content="footer.text"]', content.footer.text);
+  setText('[data-content="footer.topLink"]', content.footer.topLink);
+}
+
+function explainProposal(text, topic) {
+  const lower = text.toLowerCase();
+  const explanations = content.explanations;
+  if (lower.includes("anhÃ¶rig")) {
+    return explanations.relatives;
+  }
+  if (lower.includes("hemtjÃ¤nst") || lower.includes("Ã¤ldre") || lower.includes("75")) {
+    return explanations.elderly;
+  }
+  if (lower.includes("skola") || lower.includes("lÃ¤x") || lower.includes("elev") || lower.includes("lÃ¤rare")) {
+    return explanations.school;
+  }
+  if (lower.includes("bidrag") || lower.includes("Ã¶ppen") || lower.includes("transparens")) {
+    return explanations.transparency;
+  }
+  if (lower.includes("underhÃ¥ll") || lower.includes("fastighets")) {
+    return explanations.maintenance;
+  }
+  if (lower.includes("trafik") || lower.includes("avgÃ¥ng") || lower.includes("pÃ¥gatÃ¥g")) {
+    return explanations.transport;
+  }
+  if (lower.includes("campus") || lower.includes("hÃ¶gskol") || lower.includes("yrkeshÃ¶g")) {
+    return explanations.campus;
+  }
+  if (lower.includes("civilsamhÃ¤lle") || lower.includes("fÃ¶rening") || lower.includes("kyrk")) {
+    return explanations.civilSociety;
+  }
+  if (lower.includes("bostad") || lower.includes("smÃ¥hus") || lower.includes("radhus")) {
+    return explanations.housing;
+  }
+  return explanations.fallback.replace("{topic}", topic.label.toLowerCase());
+}
+
+function renderCards() {
+  topicGrid.innerHTML = topics
+    .map(
+      (topic) => `
+        <button
+          class="policy-card"
+          type="button"
+          data-topic="${topic.id}"
+          data-mark="${topic.mark}"
+          style="--accent:${topic.accent}"
+        >
+          <img
+            class="policy-card-image"
+            src="${topicImages[topic.mark] || `assets/${topic.mark}.png`}"
+            alt=""
+            aria-hidden="true"
+            onerror="this.remove()"
+          />
+          <span class="policy-card-content">
+            <h3>${topic.label}</h3>
+          </span>
+        </button>
+      `
+    )
+    .join("");
+}
+
+function renderCandidates() {
+  candidateGrid.innerHTML = content.candidatesSection.candidates
+    .map(
+      (candidate) => `
+        <article class="candidate-card" tabindex="0">
+          <img
+            src="${candidate.image}"
+            alt="${candidate.name}"
+            style="--candidate-position:${candidate.imagePosition || "center"}; --candidate-scale:${candidate.imageScale || 1.15}; --candidate-x:${candidate.imageX || "0"}; --candidate-y:${candidate.imageY || "0"};"
+          />
+          <div class="candidate-info">
+            <small>${candidate.role}</small>
+            <h3>${candidate.name}</h3>
+            <p>${candidate.description}</p>
+          </div>
+        </article>
+      `
+    )
+    .join("");
+}
+
+function renderTabs() {
+  tabs.innerHTML = topics
+    .map(
+      (topic) => `
+        <button
+          class="tab-button"
+          type="button"
+          role="tab"
+          aria-selected="${topic.id === activeTopic}"
+          data-topic="${topic.id}"
+        >
+          ${topic.label}
+        </button>
+      `
+    )
+    .join("");
+}
+
+function renderDetail(focus = false) {
+  const topic = topics.find((item) => item.id === activeTopic);
+  detailPanel.style.setProperty("--panel-accent", topic.accent);
+  detailPanel.innerHTML = `
+    <div class="focus-layout">
+      <div class="focus-copy">
+        <div class="detail-intro">
+          <div>
+            <p class="eyebrow">${content.focus.selectedEyebrow}</p>
+            <h2>${topic.title}</h2>
+            <p>${topic.intro}</p>
+          </div>
+        </div>
+        <div class="reader-summary" aria-label="Kort sammanfattning">
+          <strong>${content.focus.summaryTitle}</strong>
+          <ul>
+            ${topic.bullets
+              .slice(0, 3)
+              .map((bullet) => `<li>${bullet}</li>`)
+              .join("")}
+          </ul>
+        </div>
+      </div>
+
+      <div class="proposal-section">
+        <div class="carousel-heading">
+          <h3>${content.focus.proposalsTitle}</h3>
+          <div class="carousel-controls" aria-label="BlÃ¤ddra bland fÃ¶rslag">
+            <button type="button" class="carousel-button" data-carousel-prev aria-label="FÃ¶regÃ¥ende punkt">â€¹</button>
+            <span>${activeProposalIndex + 1} / ${topic.bullets.length}</span>
+            <button type="button" class="carousel-button" data-carousel-next aria-label="NÃ¤sta punkt">â€º</button>
+          </div>
+        </div>
+        <div class="proposal-carousel">
+          ${topic.bullets
+            .map((bullet, index) => {
+              const offset = index - activeProposalIndex;
+              return `
+                <article
+                  class="proposal-card ${index === activeProposalIndex ? "is-active" : ""}"
+                  data-proposal-index="${index}"
+                  style="--offset:${offset}"
+                  aria-hidden="${index === activeProposalIndex ? "false" : "true"}"
+                >
+                  <div class="proposal-card-top">
+                    <p>${topic.label}</p>
+                    <span>${String(index + 1).padStart(2, "0")}</span>
+                  </div>
+                  <h4>${bullet}</h4>
+                  <p class="proposal-subtitle">${explainProposal(bullet, topic)}</p>
+                </article>
+              `;
+            })
+            .join("")}
+        </div>
+        <div class="carousel-dots" aria-label="VÃ¤lj punkt">
+          ${topic.bullets
+            .map(
+              (_, index) => `
+                <button
+                  type="button"
+                  data-proposal-dot="${index}"
+                  aria-label="Visa punkt ${index + 1}"
+                  aria-current="${index === activeProposalIndex ? "true" : "false"}"
+                ></button>
+              `
+            )
+            .join("")}
+        </div>
+      </div>
+    </div>
+  `;
+  if (focus) {
+    detailPanel.focus({ preventScroll: true });
+  }
+}
+
+function scrollToFocusSection() {
+  const focusSection = document.querySelector("#fokus");
+  const header = document.querySelector(".site-header");
+  const headerHeight = header ? header.offsetHeight : 0;
+  const target = focusSection.getBoundingClientRect().top + window.scrollY - headerHeight - 8;
+  window.scrollTo({ top: Math.max(target, 0), behavior: "smooth" });
+}
+
+function setActiveTopic(id, scroll = false) {
+  activeTopic = id;
+  activeProposalIndex = 0;
+  document.querySelector("#fokus").hidden = false;
+  renderTabs();
+  renderDetail(scroll);
+  if (scroll) {
+    scrollToFocusSection();
+  }
+}
+
+function moveProposal(delta) {
+  const topic = topics.find((item) => item.id === activeTopic);
+  activeProposalIndex = (activeProposalIndex + delta + topic.bullets.length) % topic.bullets.length;
+  renderDetail();
+}
+
+function setProposal(index) {
+  activeProposalIndex = index;
+  renderDetail();
+}
+
+function renderPromise() {
+  const promise = promises[promiseIndex];
+  promiseCard.style.opacity = "0";
+  setTimeout(() => {
+    promiseCard.innerHTML = `
+      <small>${promise.area}</small>
+      <h3>${promise.title}</h3>
+      <p>${promise.text}</p>
+    `;
+    document.querySelector("#readMorePromise").href = promise.source;
+    promiseCard.style.opacity = "1";
+  }, 300);
+}
+
+function movePromise(delta) {
+  promiseIndex = (promiseIndex + delta + promises.length) % promises.length;
+  renderPromise();
+}
+
+function randomPromise() {
+  const next = Math.floor(Math.random() * promises.length);
+  promiseIndex = next === promiseIndex ? (next + 1) % promises.length : next;
+  renderPromise();
+}
+
+renderStaticContent();
+renderCards();
+renderCandidates();
+renderTabs();
+renderDetail();
+renderPromise();
+
+topicGrid.addEventListener("click", (event) => {
+  const card = event.target.closest("[data-topic]");
+  if (card) {
+    setActiveTopic(card.dataset.topic, true);
+  }
+});
+
+tabs.addEventListener("click", (event) => {
+  const tab = event.target.closest("[data-topic]");
+  if (tab) {
+    setActiveTopic(tab.dataset.topic);
+  }
+});
+
+detailPanel.addEventListener("click", (event) => {
+  if (event.target.closest("[data-carousel-prev]")) {
+    moveProposal(-1);
+  }
+  if (event.target.closest("[data-carousel-next]")) {
+    moveProposal(1);
+  }
+  const dot = event.target.closest("[data-proposal-dot]");
+  if (dot) {
+    setProposal(Number(dot.dataset.proposalDot));
+  }
+});
+
+document.querySelector("#prevPromise").addEventListener("click", () => movePromise(-1));
+document.querySelector("#nextPromise").addEventListener("click", () => movePromise(1));
+
+// Auto-rotate proposals every 25 seconds
+setInterval(randomPromise, 25000);
+
+</script>
