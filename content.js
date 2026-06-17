@@ -203,10 +203,10 @@ window.siteContent = {
   role: "#4 på kommunlistan",
   description: "Lyfter ungas villkor, framtidstro och möjligheten att växa upp och stanna i kommunen.",
   image: "assets/EH.jpg",
-  imagePosition: "68% center",
-  imageScale: 1.12,
+  imagePosition: "center center",
+  imageScale: 1.15,
   imageX: "0",
-  imageY: "8%"
+  imageY: "0"
 },
 {
   name: "Mats Björklund",
@@ -234,8 +234,10 @@ window.siteContent = {
   role: "#8 på kommunlistan",
   description: "Driver frågor om trygghet, digital säkerhet och en modernare kommunal service.",
   image: "assets/Tobias Eriksson.jpg",
-  imagePosition: "center 30%",
-  imageScale: 1
+  imagePosition: "center center",
+  imageScale: 1.15,
+  imageX: "0",
+  imageY: "0"
 },
 {
   name: "Marie Juhlin",
