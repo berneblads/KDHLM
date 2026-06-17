@@ -187,24 +187,25 @@ window.siteContent = {
   role: "#2 på kommunlistan",
   description: "Fokuserar på omsorg, närhet och ett starkare lokalsamhälle.",
   image: "assets/EHB.jpg",
-  imagePosition: "center 58%",
-  imageScale: 1.28
+  imagePosition: "55% center",
+  imageScale: 1.12
 },
 {
   name: "Christer Caesar",
   role: "#3 på kommunlistan",
   description: "Vill se ordning, ansvar och långsiktighet i kommunens ekonomi och styrning.",
   image: "assets/CC.jpg",
-  imagePosition: "center 58%"
+  imagePosition: "50% center",
+  imageScale: 1
 },
 {
   name: "Elias Höghäll",
   role: "#4 på kommunlistan",
   description: "Lyfter ungas villkor, framtidstro och möjligheten att växa upp och stanna i kommunen.",
   image: "assets/EH.jpg",
-  imagePosition: "right center",
-  imageScale: 1.3,
-  imageX: "-10%",
+  imagePosition: "68% center",
+  imageScale: 1.12,
+  imageX: "0",
   imageY: "0"
 },
 {
@@ -212,8 +213,9 @@ window.siteContent = {
   role: "#5 på kommunlistan",
   description: "Driver frågor om socialtansvar, service och utveckling.",
   image: "assets/Mats B.jpg",
-  imagePosition: "42% center",
-  imageScale: 1.15
+  imagePosition: "67% center",
+  imageScale: 1.12,
+  imageX: "0"
 },
 {
   name: "Pär Palmgren",
@@ -232,8 +234,8 @@ window.siteContent = {
   role: "#8 på kommunlistan",
   description: "Driver frågor om trygghet, digital säkerhet och en modernare kommunal service.",
   image: "assets/Tobias Eriksson.jpg",
-  imagePosition: "center 60%",
-  imageScale: 1.02
+  imagePosition: "center 30%",
+  imageScale: 1
 },
 {
   name: "Marie Juhlin",
@@ -242,13 +244,15 @@ window.siteContent = {
   image: "assets/marie Julhin.jpg",
   imagePosition: "center center",
   imageX: "0",
-  imageY: "-8%"
+  imageY: "-6%"
 },
 {
   name: "Gilbert Nathell",
   role: "#10 på kommunlistan",
   description: "Lyfter vikten av en fungerande skolgång, tryggheten och vikten av levande orter i hela kommunen.",
-  image: "assets/Toppkandidater.png"
+  image: "assets/Gilbert Nathell.jpg",
+  imagePosition: "center 32%",
+  imageScale: 1
 }
     ]
   },
@@ -305,13 +309,17 @@ window.siteContent = {
         "Prioritera omsorgens kvalitet, trygghet och värdighet.",
         "Större möjlighet att välja kön på personal i intima situationer.",
         "Underhåll, säkerhet och tillgänglighet på äldreboenden.",
-        "Omtag kring måltidsorganisationen med näringsrik mat och bemötande.",
+        "Omtag kring måltidsorganisationen med näringsrik mat, trygghet och bemötande i samråd med våra äldre.",
         "Förebyggande hembesök från 75 år.",
         "Stärkt anhörigstöd och avlösning.",
         "Anställa geriatriker inom kommunal äldreomsorg.",
         "Fria arbetsskor och utbildningssjuksköterskor.",
+        "Prioritera snöröjning på stråk där äldre och människor med funktionsvariationer rör sig.",
         "Bostad först och minskad hemlöshet.",
-        "Fritt inträde på kommunens badanläggningar för alla över 75 år."
+        "Erbjuda seniorer flytthjälp vid flytt från eget boende till mellanboende.",
+        "Omsorgsbonus till ungdomar som tar examen från Vård- och omsorgsprogrammet och börjar arbeta i kommunens omsorg.",
+        "Samarbete mellan kulturskolan och omsorgen för mer kultur på äldreboenden.",
+        "Kommunalt trygghetslöfte för äldre med kontinuitet i hemtjänsten, fasta omsorgskontakter och motverkad ensamhet."
       ]
     },
     {
@@ -325,6 +333,7 @@ window.siteContent = {
       bullets: [
         "Släppa fram idéburna, privata och föreningsdrivna alternativ.",
         "Värna föräldrars möjlighet att välja skola och barnomsorg.",
+        "Minska barngrupperna i förskolan: högst 12 barn i småbarnsgrupper och max 15 barn för de större barnen.",
         "Mer tid för läsning, skrivande och matematik.",
         "Tidiga insatser innan problem växer.",
         "Tydligare ordningsregler och bättre stöd till lärare och rektorer.",
@@ -343,10 +352,11 @@ window.siteContent = {
         "Politiken ska handla om människor i vardagen, inte bara budgetrader och organisationsscheman.",
       bullets: [
         "Trygghet och respekt i skola, fritid, omsorg och offentliga miljöer.",
+        "Uppvärdera värderingarna i skolan: dygder framför normlöshet.",
+        "Värna skolavslutningar i kyrkan och traditioner som julsånger.",
         "Värna familjens betydelse och föräldrars delaktighet.",
-        "Kommunalt trygghetslöfte för äldre.",
         "Stärka kulturarv, mötesplatser, bibliotek och hembygdsföreningar.",
-        "Redovisa hur större beslut påverkar människors vardag.",
+        "Redovisa hur större förändringar inom skola, äldreomsorg, LSS och samhällsplanering påverkar människors vardag.",
         "Lokala utvecklingsplaner för större byar och kommundelar."
       ]
     },
@@ -362,7 +372,7 @@ window.siteContent = {
         "Samlat uppdrag, utvecklingsplan och underhållsplan för träffpunkter.",
         "Likvärdig service oavsett bostadsort.",
         "Förebyggande uppdrag inom gemenskap, hälsa och trygghet.",
-        "Samarbete med civilsamhälle, föreningar, kyrkor och Region Skåne.",
+        "Samarbete med civilsamhället, civilförsvaret, föreningar, kyrkor, pensionärsorganisationer och Region Skåne.",
         "Närmare koppling till hemtjänst och anhörigstöd.",
         "Hälsofrämjande aktiviteter och digitalt stöd på alla orter.",
         "Följa upp effekter på ensamhet, hälsa och trygghet."
@@ -383,8 +393,12 @@ window.siteContent = {
         "Öppet bidragsregister för kommunens verksamhetsbidrag.",
         "Öppen plattform för overheadfunktioner och yrkestitlar.",
         "Redovisa effekter när service förändras eller centraliseras.",
+        "Släppa fram idéburna, privata och föreningsdrivna alternativ där de fungerar bättre än kommunen.",
+        "Se över kommunens utbud för unga, bland annat Ungfritid, så hela kommunen får ett jämförbart utbud.",
+        "Öka kommunens attraktionskraft för turism och rekreation.",
+        "Se över vilka delar av offentlig verksamhet som kan samordnas med civilsamhället.",
         "Minska onödig administration i kommunledningsförvaltningen.",
-        "Samordna kommunikatörer och näringslivsavdelning."
+        "Samordna kommunikatörer och näringslivsavdelning i en samlad kommunikationsavdelning som stärker kommunens varumärke."
       ]
     },
     {
@@ -396,6 +410,8 @@ window.siteContent = {
       intro:
         "Likabehandling betyder att alla tas på allvar. Programmet vill anpassa politiken efter orters olika villkor.",
       bullets: [
+        "Verka för att återstarta Tyringe och Bjärnums simhallar.",
+        "Erkänna skillnader mellan orter och anpassa politiken därefter.",
         "Grundpaket av service, trygghet och mötesplatser i kransorterna.",
         "Tätortsmiljon för lokalt engagemang och investeringar.",
         "Arkitekturpolicy med traditionella estetiska värden.",
@@ -404,8 +420,11 @@ window.siteContent = {
         "Säsongsblommor och dekoration i alla tätorter.",
         "Bevara landsbygdsskolor där det är försvarbart.",
         "Fler avgångar från kransorter och Pågatågsstation i Finja.",
+        "Verka för standardhöjning av väg 117 mellan Hässleholm och Markaryd.",
         "Kvälls- och nattrafik i samverkan med Region Skåne.",
-        "Stadspulsbiljett för evenemang och aktiviteter."
+        "Stadspulsbiljett för evenemang och aktiviteter.",
+        "Stärka kulturarv, lokala mötesplatser, bibliotek, hembygdsföreningar och evenemang i kransorterna.",
+        "Återinföra bidrag till trosamfund och försvarsorganisationer."
       ]
     },
     {
@@ -420,7 +439,7 @@ window.siteContent = {
         "Arbeta för högskolefilial eller egen högskola i samarbete med lärosäten.",
         "Stegvis uppbyggt spår mot examensrätt och särskild profil.",
         "Möjliggöra student- och forskarbostäder nära campus.",
-        "Forskningsprojekt med kommunala förvaltningar.",
+        "Forskningsprojekt med kommunala förvaltningar, exempelvis energi, äldreomsorg och social innovation.",
         "Knyta campus till Norra Station och gamla Norra Skåne-huset.",
         "Co-working, inkubatorer och testbäddar i Västra centrum.",
         "Driva finansiering och etablering regionalt och nationellt.",
