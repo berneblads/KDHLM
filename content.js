@@ -203,8 +203,8 @@ window.siteContent = {
   role: "#4 på kommunlistan",
   description: "Lyfter ungas villkor, framtidstro och möjligheten att växa upp och stanna i kommunen.",
   image: "assets/EH.jpg",
-  imagePosition: "center center",
-  imageScale: 1.15,
+  imagePosition: "58% 18%",
+  imageScale: 1,
   imageX: "0",
   imageY: "0"
 },
@@ -234,8 +234,8 @@ window.siteContent = {
   role: "#8 på kommunlistan",
   description: "Driver frågor om trygghet, digital säkerhet och en modernare kommunal service.",
   image: "assets/Tobias Eriksson.jpg",
-  imagePosition: "center center",
-  imageScale: 1.15,
+  imagePosition: "50% 18%",
+  imageScale: 1,
   imageX: "0",
   imageY: "0"
 },
