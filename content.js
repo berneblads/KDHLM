@@ -206,7 +206,7 @@ window.siteContent = {
   imagePosition: "70% center",
   imageScale: 1.12,
   imageX: "0",
-  imageY: "0"
+  imageY: "-16%"
 },
 {
   name: "Mats Björklund",
