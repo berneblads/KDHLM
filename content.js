@@ -203,10 +203,10 @@ window.siteContent = {
   role: "#4 på kommunlistan",
   description: "Lyfter ungas villkor, framtidstro och möjligheten att växa upp och stanna i kommunen.",
   image: "assets/EH.jpg",
-  imagePosition: "70% center",
+  imagePosition: "68% center",
   imageScale: 1.12,
   imageX: "0",
-  imageY: "16%"
+  imageY: "8%"
 },
 {
   name: "Mats Björklund",
