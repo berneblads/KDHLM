@@ -196,14 +196,14 @@ window.siteContent = {
   description: "Vill se ordning, ansvar och långsiktighet i kommunens ekonomi och styrning.",
   image: "assets/CC.jpg",
   imagePosition: "50% center",
-  imageScale: 1
+  imageScale: 1.12
 },
 {
   name: "Elias Höghäll",
   role: "#4 på kommunlistan",
   description: "Lyfter ungas villkor, framtidstro och möjligheten att växa upp och stanna i kommunen.",
   image: "assets/EH.jpg",
-  imagePosition: "55% center",
+  imagePosition: "70% center",
   imageScale: 1.12,
   imageX: "0",
   imageY: "0"
