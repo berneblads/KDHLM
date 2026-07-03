@@ -1,5 +1,5 @@
 window.siteContent = {
-  pageTitle: "Tro på Hässleholm | KD Hässleholm",
+  pageTitle: "Tro på Hässleholm",
   metaDescription:
     "En interaktiv överblick av Kristdemokraterna i Hässleholms valprogram 2026.",
   nav: {
