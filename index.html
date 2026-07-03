@@ -31,6 +31,7 @@
       content="En interaktiv överblick av Kristdemokraterna i Hässleholms valprogram 2026."
     />
     <meta name="twitter:image" content="https://kdhlm.vercel.app/screenshot-home.png?v=20260703" />
+    <link rel="preload" as="image" href="assets/optimized/avenyn-hero.jpg" fetchpriority="high" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -48,6 +49,9 @@
           class="brand-logo"
           src="assets/Hässleholm-sida-bla-300dpi.png"
           alt="KD Hässleholm"
+          width="1735"
+          height="681"
+          decoding="async"
         />
       </a>
 
@@ -69,8 +73,25 @@
 
     <main id="top">
       <section class="hero" aria-labelledby="hero-title">
-        <img class="hero-image" src="assets/avenyn.jpg" alt="" aria-hidden="true" />
-        <img class="hero-kd-mark" src="assets/KD-logo-vit.png" alt="" aria-hidden="true" />
+        <img
+          class="hero-image"
+          src="assets/optimized/avenyn-hero.jpg"
+          alt=""
+          aria-hidden="true"
+          width="1920"
+          height="1371"
+          fetchpriority="high"
+          decoding="async"
+        />
+        <img
+          class="hero-kd-mark"
+          src="assets/KD-logo-vit.png"
+          alt=""
+          aria-hidden="true"
+          width="419"
+          height="418"
+          decoding="async"
+        />
         <div class="hero-inner">
           <div class="hero-copy">
             <p class="eyebrow" data-content="hero.eyebrow">Kristdemokraterna Hässleholm 2026</p>
@@ -106,8 +127,12 @@
         </div>
         <figure class="candidate-photo">
           <img
-            src="assets/Toppkandidater.png"
+            src="assets/optimized/toppkandidater.jpg"
             alt="Simon Berneblad Mandegård och Erika Heil Utbult, toppkandidater för Kristdemokraterna i Hässleholm."
+            width="899"
+            height="1350"
+            loading="lazy"
+            decoding="async"
           />
           <figcaption data-content="statement.caption">Simon Berneblad Mandegård & Erika Heil Utbult</figcaption>
         </figure>
@@ -188,7 +213,14 @@
           </a>
         </div>
         <div class="team-image-wrap">
-          <img src="assets/Tro på Hässleholm.png" alt="Tro på Hässleholm" />
+          <img
+            src="assets/optimized/tro-pa-hassleholm.jpg"
+            alt="Tro på Hässleholm"
+            width="1400"
+            height="276"
+            loading="lazy"
+            decoding="async"
+          />
         </div>
       </section>
 
@@ -213,7 +245,7 @@
       </div>
     </footer>
 
-    <script src="content.js"></script>
-    <script src="app.js"></script>
+    <script src="content.js" defer></script>
+    <script src="app.js" defer></script>
   </body>
 </html>

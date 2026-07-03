@@ -46,6 +46,18 @@ button {
   font: inherit;
 }
 
+img {
+  max-width: 100%;
+}
+
+.hero-image,
+.candidate-photo img,
+.policy-card-image,
+.candidate-card img,
+.team-image-wrap img {
+  background-color: #e6eef6;
+}
+
 .site-header {
   position: sticky;
   top: 0;
@@ -393,6 +405,7 @@ main > section:not(.hero) {
 
 .policy-card {
   position: relative;
+  contain: layout paint;
   min-height: 250px;
   display: flex;
   flex-direction: column;
@@ -898,6 +911,7 @@ main > section:not(.hero) {
 
 .candidate-card {
   position: relative;
+  contain: layout paint;
   aspect-ratio: 1;
   overflow: hidden;
   border: 1px solid var(--line);
@@ -1022,6 +1036,20 @@ footer a {
 footer a:hover {
   background: var(--white);
   color: var(--kd-blue-ink);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.001ms !important;
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+  }
 }
 
 @media (max-width: 1040px) {

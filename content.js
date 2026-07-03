@@ -52,7 +52,7 @@ window.siteContent = {
     randomButton: "Tryck här för att läsa nytt förslag",
     prevLabel: "Föregående nationella förslag",
     nextLabel: "Nästa nationella förslag",
-    backgroundImage: "assets/Ebba.jpg"
+    backgroundImage: "assets/optimized/ebba-bg.jpg"
   },
   nationalProposals: [
     {
@@ -168,7 +168,7 @@ window.siteContent = {
     cta: "Bli en del av Team Busch",
     ctaUrl:
       "https://kristdemokraterna.se/engagera-dig/ansok-om-medlemskap-i-kristdemokraterna",
-    image: "assets/Tro på Hässleholm.png",
+    image: "assets/optimized/tro-pa-hassleholm.jpg",
     imageAlt: "Tro på Hässleholm"
   },
   candidatesSection: {
@@ -180,13 +180,13 @@ window.siteContent = {
   name: "Simon Berneblad Mandegård",
   role: "#1 på kommunlistan",
   description: "Driver frågor om äldreomsorg, trygghet och ett rikt kultur- och fritidsliv.",
-  image: "assets/SB.jpg"
+  image: "assets/optimized/candidate-sb.jpg"
 },
 {
   name: "Erika Heil Utbult",
   role: "#2 på kommunlistan",
   description: "Fokuserar på omsorg, närhet och ett starkare lokalsamhälle.",
-  image: "assets/EHB.jpg",
+  image: "assets/optimized/candidate-ehb.jpg",
   imagePosition: "55% center",
   imageScale: 1.12
 },
@@ -194,7 +194,7 @@ window.siteContent = {
   name: "Christer Caesar",
   role: "#3 på kommunlistan",
   description: "Vill se ordning, ansvar och långsiktighet i kommunens ekonomi och styrning.",
-  image: "assets/CC.jpg",
+  image: "assets/optimized/candidate-cc.jpg",
   imagePosition: "50% center",
   imageScale: 1.12
 },
@@ -202,7 +202,7 @@ window.siteContent = {
   name: "Elias Höghäll",
   role: "#4 på kommunlistan",
   description: "Lyfter ungas villkor, framtidstro och möjligheten att växa upp och stanna i kommunen.",
-  image: "assets/EH.jpg",
+  image: "assets/optimized/candidate-eh.jpg",
   imagePosition: "58% 18%",
   imageScale: 1,
   imageX: "0",
@@ -212,7 +212,7 @@ window.siteContent = {
   name: "Mats Björklund",
   role: "#5 på kommunlistan",
   description: "Driver frågor om socialtansvar, service och utveckling.",
-  image: "assets/Mats B.jpg",
+  image: "assets/optimized/candidate-mats-b.jpg",
   imagePosition: "67% center",
   imageScale: 1.12,
   imageX: "0"
@@ -221,19 +221,19 @@ window.siteContent = {
   name: "Pär Palmgren",
   role: "#6 på kommunlistan",
   description: "Fokuserar på infrastruktursfrågor, en kommun som förvaltar ekonomin väl och en kommun som håller ihop.",
-  image: "assets/Pär Palmgren.jpg"
+  image: "assets/optimized/candidate-par-palmgren.jpg"
 },
 {
   name: "Roland Blomqvist",
   role: "#7 på kommunlistan",
   description: "Vill stärka samhällsplanering, infrastruktur och minska krånglet för medborgaren.",
-  image: "assets/Roland Blomqvist.png"
+  image: "assets/optimized/candidate-roland-blomqvist.jpg"
 },
 {
   name: "Tobias Eriksson",
   role: "#8 på kommunlistan",
   description: "Driver frågor om trygghet, digital säkerhet och en modernare kommunal service.",
-  image: "assets/Tobias Eriksson.jpg",
+  image: "assets/optimized/candidate-tobias-eriksson.jpg",
   imagePosition: "50% 18%",
   imageScale: 1,
   imageX: "0",
@@ -243,7 +243,7 @@ window.siteContent = {
   name: "Marie Juhlin",
   role: "#9 på kommunlistan",
   description: "Fokuserar på vård, omsorg och trygghet för äldre och anhöriga.",
-  image: "assets/marie Julhin.jpg",
+  image: "assets/optimized/candidate-marie-juhlin.jpg",
   imagePosition: "center center",
   imageX: "0",
   imageY: "-6%"
@@ -252,7 +252,7 @@ window.siteContent = {
   name: "Gilbert Nathell",
   role: "#10 på kommunlistan",
   description: "Lyfter vikten av en fungerande skolgång, tryggheten och vikten av levande orter i hela kommunen.",
-  image: "assets/Gilbert Nathell.jpg",
+  image: "assets/optimized/candidate-gilbert-nathell.jpg",
   imagePosition: "center 32%",
   imageScale: 1
 }
@@ -268,13 +268,13 @@ window.siteContent = {
     topLink: "Till toppen"
   },
   topicImages: {
-    O: "assets/o.jpg",
-    S: "assets/S.png",
-    V: "assets/V.png",
-    M: "assets/M.jpg",
-    K: "assets/SK.jpg",
-    H: "assets/H.jpg",
-    C: "assets/C.jpg"
+    O: "assets/optimized/topic-o.jpg",
+    S: "assets/optimized/topic-s.jpg",
+    V: "assets/optimized/topic-v.jpg",
+    M: "assets/optimized/topic-m.jpg",
+    K: "assets/optimized/topic-sk.jpg",
+    H: "assets/optimized/topic-h.jpg",
+    C: "assets/optimized/topic-c.jpg"
   },
   explanations: {
     relatives:

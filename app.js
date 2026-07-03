@@ -133,6 +133,10 @@ function renderCards() {
             src="${topicImages[topic.mark] || `assets/${topic.mark}.png`}"
             alt=""
             aria-hidden="true"
+            width="640"
+            height="427"
+            loading="lazy"
+            decoding="async"
             onerror="this.remove()"
           />
           <span class="policy-card-content">
@@ -152,6 +156,10 @@ function renderCandidates() {
           <img
             src="${candidate.image}"
             alt="${candidate.name}"
+            width="900"
+            height="900"
+            loading="lazy"
+            decoding="async"
             style="--candidate-position:${candidate.imagePosition || "center"}; --candidate-scale:${candidate.imageScale || 1.15}; --candidate-x:${candidate.imageX || "0"}; --candidate-y:${candidate.imageY || "0"};"
           />
           <div class="candidate-info">
