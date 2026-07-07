@@ -1,7 +1,7 @@
 window.siteContent = {
-  pageTitle: "Tro på Hässleholm",
+  pageTitle: "KD Hässleholm | Valprogram 2026-2030 | Tro på Hässleholm",
   metaDescription:
-    "En interaktiv överblick av Kristdemokraterna i Hässleholms valprogram 2026.",
+    "Kristdemokraterna i Hässleholms valprogram 2026-2030. Läs KD:s förslag för omsorg, skola, trygghet, ekonomi, landsbygd, kransorter och hela kommunen.",
   nav: {
     start: "Start",
     statement: "Utgångspunkt",

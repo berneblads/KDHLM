@@ -149,16 +149,7 @@ nav a:hover,
 }
 
 .hero-kd-mark {
-  position: absolute;
-  z-index: 3;
-  right: clamp(-230px, -11vw, -110px);
-  top: clamp(-150px, -8vw, -76px);
-  bottom: auto;
-  width: min(78vw, 1120px);
-  max-width: none;
-  opacity: 0.28;
-  transform: rotate(10deg);
-  pointer-events: none;
+  display: none;
 }
 
 .hero-inner {
@@ -300,6 +291,16 @@ h3 {
 
 main > section:not(.hero) {
   padding: clamp(86px, 10vw, 140px) clamp(24px, 6vw, 104px);
+}
+
+@media (max-width: 1100px) {
+  h1 {
+    font-size: clamp(3.3rem, 7.8vw, 4.9rem);
+  }
+
+  .hero-inner {
+    gap: clamp(22px, 4vw, 48px);
+  }
 }
 
 .statement {
@@ -1176,7 +1177,7 @@ footer a:hover {
   }
 
   h1 {
-    font-size: clamp(3.2rem, 17vw, 5rem);
+    font-size: clamp(2.9rem, 14.5vw, 3.9rem);
   }
 
   .detail-intro {
