@@ -4,7 +4,8 @@
   "description": "Interaktiv landningssida for KD Hassleholms valprogram 2026.",
   "main": "index.html",
   "scripts": {
-    "start": "vite --host 127.0.0.1"
+    "start": "vite --host 127.0.0.1",
+    "build": "vite build"
   },
   "keywords": [],
   "author": "",

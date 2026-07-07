@@ -877,7 +877,7 @@ main > section:not(.hero) {
 
 .team-image-wrap {
   display: flex;
-  align-items: flex-start;
+  align-items: flex-end;
   justify-content: center;
   overflow: hidden;
   height: var(--team-image-height);
@@ -892,8 +892,8 @@ main > section:not(.hero) {
   max-width: none;
   height: auto;
   object-fit: contain;
-  object-position: left top;
-  transform: translate(-22%, -8.2%);
+  object-position: left bottom;
+  transform: translate(-22%, 32px);
 }
 
 .candidates-section {
