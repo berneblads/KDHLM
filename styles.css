@@ -141,26 +141,19 @@ nav a:hover,
 
 .valstuga-page .site-header {
   position: static;
-  padding: 5px clamp(12px, 3vw, 28px);
-  gap: 12px;
+  padding-block: 8px;
 }
 
 .valstuga-page .brand-logo {
-  width: clamp(58px, 6vw, 82px);
+  width: clamp(76px, 8vw, 110px);
 }
 
 .valstuga-page nav {
   display: none;
 }
 
-.valstuga-page .header-action {
-  min-height: 32px;
-  padding: 0 9px;
-  font-size: 0.76rem;
-}
-
 .valstuga-main {
-  min-height: calc(100svh - 48px);
+  min-height: calc(100svh - 79px);
   display: grid;
   grid-template-rows: auto minmax(0, 1fr);
 }
@@ -170,7 +163,8 @@ nav a:hover,
   align-items: center;
   justify-content: space-between;
   gap: 16px;
-  padding: 9px clamp(12px, 3vw, 32px);
+  min-height: 58px;
+  padding: 6px clamp(14px, 4vw, 42px);
   background: var(--kd-blue-ink);
   color: var(--white);
 }
@@ -182,27 +176,25 @@ nav a:hover,
 
 .valstuga-hero h1 {
   max-width: 900px;
-  font-size: clamp(1.35rem, 2.5vw, 2.35rem);
+  font-size: clamp(1.28rem, 2.2vw, 1.9rem);
 }
 
 .sheet-section {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   overflow: hidden;
-  padding: 8px;
+  padding: 12px clamp(14px, 4vw, 42px);
 }
 
 .sheet-frame {
   display: block;
-  width: min(118%, 960px);
-  height: calc((100svh - 118px) / 0.85);
-  min-height: 720px;
+  width: min(100%, 430px);
+  height: calc(100svh - 164px);
+  min-height: 680px;
   border: 1px solid var(--line);
   border-radius: 8px;
   background: var(--white);
   box-shadow: 0 16px 48px rgba(0, 47, 95, 0.12);
-  transform: scale(0.85);
-  transform-origin: top left;
 }
 
 .hero {
@@ -420,7 +412,7 @@ main > section:not(.hero) {
 .candidate-photo {
   position: relative;
   justify-self: end;
-  width: min(100%, 400px);
+  width: min(100%, 360px);
   margin: 0;
   overflow: hidden;
   border-radius: 28px;
@@ -443,7 +435,7 @@ main > section:not(.hero) {
   width: 100%;
   aspect-ratio: 1 / 1;
   object-fit: cover;
-  object-position: center top;
+  object-position: center 34%;
   background: linear-gradient(135deg, var(--kd-blue), var(--kd-blue-dark));
 }
 
@@ -1241,15 +1233,14 @@ footer a:hover {
   }
 
   .sheet-frame {
-    width: 134%;
-    height: calc((100svh - 140px) / 0.75);
-    min-height: 760px;
-    transform: scale(0.75);
+    width: min(100%, 430px);
+    height: calc(100svh - 190px);
+    min-height: 640px;
   }
 
   .candidate-photo {
     justify-self: start;
-    width: min(100%, 360px);
+    width: min(100%, 330px);
   }
 
   .tabs {
