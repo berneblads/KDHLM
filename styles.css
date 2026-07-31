@@ -154,46 +154,22 @@ nav a:hover,
 
 .valstuga-main {
   min-height: calc(100svh - 79px);
-  display: grid;
-  grid-template-rows: auto minmax(0, 1fr);
 }
 
 .valstuga-info {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 16px;
-  width: min(92vw, 760px);
-  margin: 14px auto 8px;
-  border: 1px solid rgba(0, 94, 161, 0.16);
-  border-left: 7px solid var(--kd-yellow);
-  border-radius: 8px;
-  padding: 13px 16px;
-  background: var(--white);
+  max-width: 960px;
+  margin: 18px auto 0;
+  padding: 0 clamp(14px, 3vw, 30px);
   color: var(--kd-blue-ink);
-  box-shadow: 0 12px 32px rgba(0, 47, 95, 0.08);
+  font-size: clamp(1rem, 1.4vw, 1.12rem);
+  font-weight: 700;
 }
 
-.valstuga-info .eyebrow {
-  margin-bottom: 4px;
-}
-
-.valstuga-info h1,
-.valstuga-info p {
-  margin: 0;
-}
-
-.valstuga-info h1 {
-  color: var(--kd-blue-ink);
-  font-size: clamp(1.35rem, 2.5vw, 2rem);
-}
-
-.valstuga-info p:last-child {
-  margin-top: 5px;
-  color: var(--muted);
-  font-size: clamp(0.98rem, 1.25vw, 1.08rem);
+.valstuga-info a {
+  color: var(--kd-blue);
   font-weight: 900;
-  line-height: 1.24;
+  text-decoration: underline;
+  text-underline-offset: 3px;
 }
 
 .sheet-section {
@@ -201,13 +177,13 @@ nav a:hover,
   align-items: flex-start;
   justify-content: center;
   overflow: hidden;
-  padding: 0 clamp(14px, 3vw, 30px) clamp(6px, 1vw, 12px);
+  padding: 4px clamp(14px, 3vw, 30px) clamp(6px, 1vw, 12px);
 }
 
 .sheet-frame {
   display: block;
-  width: min(92vw, 430px);
-  height: calc(100svh - 202px);
+  width: min(92vw, 960px);
+  height: min(52vw, calc(100svh - 104px));
   min-height: 520px;
   border: 2px solid rgba(0, 94, 161, 0.18);
   border-radius: 8px;
@@ -1247,15 +1223,8 @@ footer a:hover {
 
   .sheet-frame {
     width: 100%;
-    height: min(68svh, 680px);
+    height: min(74svh, 700px);
     min-height: 520px;
-  }
-
-  .valstuga-info {
-    align-items: flex-start;
-    flex-direction: column;
-    width: calc(100% - 28px);
-    margin-top: 12px;
   }
 
   .candidate-photo {
