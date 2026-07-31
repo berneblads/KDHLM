@@ -158,7 +158,7 @@ nav a:hover,
 
 .valstuga-info {
   max-width: 960px;
-  margin: 10px auto 0;
+  margin: 18px auto 0;
   padding: 0 clamp(14px, 3vw, 30px);
   color: var(--kd-blue-ink);
   font-size: clamp(1rem, 1.4vw, 1.12rem);
@@ -177,7 +177,7 @@ nav a:hover,
   align-items: flex-start;
   justify-content: center;
   overflow: hidden;
-  padding: 8px clamp(14px, 3vw, 30px) clamp(6px, 1vw, 12px);
+  padding: 4px clamp(14px, 3vw, 30px) clamp(6px, 1vw, 12px);
 }
 
 .sheet-frame {
