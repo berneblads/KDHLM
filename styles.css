@@ -163,11 +163,10 @@ nav a:hover,
   align-items: center;
   justify-content: space-between;
   gap: 12px;
-  min-height: 44px;
-  padding: 6px clamp(14px, 4vw, 42px);
-  border-top: 1px solid rgba(0, 47, 95, 0.1);
-  background: var(--white);
-  color: var(--kd-blue-ink);
+  min-height: 52px;
+  padding: 7px clamp(14px, 4vw, 42px);
+  background: var(--kd-blue-ink);
+  color: var(--white);
 }
 
 .valstuga-toolbar h1 {
@@ -175,24 +174,27 @@ nav a:hover,
   line-height: 1;
 }
 
+.valstuga-open-link {
+  min-height: 38px;
+}
+
 .sheet-section {
   display: flex;
   align-items: flex-start;
   justify-content: center;
   overflow: hidden;
-  padding: clamp(14px, 3vw, 28px);
+  padding: clamp(16px, 3vw, 30px);
 }
 
 .sheet-frame {
   display: block;
-  width: 340px;
-  height: calc((100svh - 164px) / 1.55);
-  border: 1px solid var(--line);
+  width: min(92vw, 960px);
+  height: min(52vw, calc(100svh - 178px));
+  min-height: 520px;
+  border: 2px solid rgba(0, 94, 161, 0.18);
   border-radius: 8px;
   background: var(--white);
   box-shadow: 0 16px 48px rgba(0, 47, 95, 0.12);
-  transform: scale(1.55);
-  transform-origin: top center;
 }
 
 .hero {
@@ -1226,9 +1228,9 @@ footer a:hover {
   }
 
   .sheet-frame {
-    width: 320px;
-    height: calc((100svh - 194px) / 1.15);
-    transform: scale(1.15);
+    width: 100%;
+    height: min(78svh, 720px);
+    min-height: 560px;
   }
 
   .candidate-photo {
