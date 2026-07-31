@@ -412,7 +412,8 @@ main > section:not(.hero) {
 .candidate-photo {
   position: relative;
   justify-self: end;
-  width: min(100%, 360px);
+  width: min(100%, 340px);
+  aspect-ratio: 1 / 1;
   margin: 0;
   overflow: hidden;
   border-radius: 28px;
@@ -433,9 +434,9 @@ main > section:not(.hero) {
 .candidate-photo img {
   display: block;
   width: 100%;
-  aspect-ratio: 1 / 1;
+  height: 100%;
   object-fit: cover;
-  object-position: center 34%;
+  object-position: center 28%;
   background: linear-gradient(135deg, var(--kd-blue), var(--kd-blue-dark));
 }
 
@@ -1240,7 +1241,7 @@ footer a:hover {
 
   .candidate-photo {
     justify-self: start;
-    width: min(100%, 330px);
+    width: min(100%, 300px);
   }
 
   .tabs {
