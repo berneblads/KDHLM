@@ -141,19 +141,26 @@ nav a:hover,
 
 .valstuga-page .site-header {
   position: static;
-  padding-block: 8px;
+  padding: 5px clamp(12px, 3vw, 28px);
+  gap: 12px;
 }
 
 .valstuga-page .brand-logo {
-  width: clamp(76px, 8vw, 110px);
+  width: clamp(58px, 6vw, 82px);
 }
 
 .valstuga-page nav {
   display: none;
 }
 
+.valstuga-page .header-action {
+  min-height: 32px;
+  padding: 0 9px;
+  font-size: 0.76rem;
+}
+
 .valstuga-main {
-  min-height: calc(100svh - 79px);
+  min-height: calc(100svh - 48px);
   display: grid;
   grid-template-rows: auto minmax(0, 1fr);
 }
@@ -163,7 +170,7 @@ nav a:hover,
   align-items: center;
   justify-content: space-between;
   gap: 16px;
-  padding: 14px clamp(14px, 4vw, 42px);
+  padding: 9px clamp(12px, 3vw, 32px);
   background: var(--kd-blue-ink);
   color: var(--white);
 }
@@ -175,18 +182,20 @@ nav a:hover,
 
 .valstuga-hero h1 {
   max-width: 900px;
-  font-size: clamp(1.7rem, 3.4vw, 3.2rem);
+  font-size: clamp(1.35rem, 2.5vw, 2.35rem);
 }
 
 .sheet-section {
+  display: flex;
+  justify-content: center;
   overflow: hidden;
   padding: 8px;
 }
 
 .sheet-frame {
   display: block;
-  width: 118%;
-  height: calc((100svh - 156px) / 0.85);
+  width: min(118%, 960px);
+  height: calc((100svh - 118px) / 0.85);
   min-height: 720px;
   border: 1px solid var(--line);
   border-radius: 8px;
@@ -386,10 +395,12 @@ main > section:not(.hero) {
 
 .statement {
   display: grid;
-  grid-template-columns: minmax(260px, 1fr) minmax(280px, 0.62fr);
-  gap: clamp(34px, 7vw, 100px);
+  grid-template-columns: minmax(260px, 1fr) minmax(260px, 0.54fr);
+  gap: clamp(28px, 5vw, 72px);
   align-items: center;
   background: var(--white);
+  padding-top: clamp(48px, 7vw, 84px) !important;
+  padding-bottom: clamp(48px, 7vw, 84px) !important;
 }
 
 .statement-copy p:last-child,
@@ -409,7 +420,7 @@ main > section:not(.hero) {
 .candidate-photo {
   position: relative;
   justify-self: end;
-  width: min(100%, 460px);
+  width: min(100%, 400px);
   margin: 0;
   overflow: hidden;
   border-radius: 28px;
@@ -432,7 +443,7 @@ main > section:not(.hero) {
   width: 100%;
   aspect-ratio: 1 / 1;
   object-fit: cover;
-  object-position: center 30%;
+  object-position: center top;
   background: linear-gradient(135deg, var(--kd-blue), var(--kd-blue-dark));
 }
 
@@ -1226,14 +1237,19 @@ footer a:hover {
 
   .valstuga-hero {
     align-items: flex-start;
-    padding-block: 12px;
+    padding-block: 8px;
   }
 
   .sheet-frame {
     width: 134%;
-    height: calc((100svh - 176px) / 0.75);
+    height: calc((100svh - 140px) / 0.75);
     min-height: 760px;
     transform: scale(0.75);
+  }
+
+  .candidate-photo {
+    justify-self: start;
+    width: min(100%, 360px);
   }
 
   .tabs {
