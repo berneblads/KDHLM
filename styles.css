@@ -163,19 +163,21 @@ nav a:hover,
   align-items: center;
   justify-content: space-between;
   gap: 12px;
-  min-height: 52px;
-  padding: 7px clamp(14px, 4vw, 42px);
+  min-height: 30px;
+  padding: 3px clamp(14px, 4vw, 42px);
   background: var(--kd-blue-ink);
   color: var(--white);
 }
 
 .valstuga-toolbar h1 {
-  font-size: clamp(1.05rem, 1.8vw, 1.45rem);
+  font-size: clamp(0.88rem, 1.35vw, 1.08rem);
   line-height: 1;
 }
 
 .valstuga-open-link {
-  min-height: 38px;
+  min-height: 28px;
+  padding-inline: 12px;
+  font-size: 0.78rem;
 }
 
 .sheet-section {
@@ -183,13 +185,13 @@ nav a:hover,
   align-items: flex-start;
   justify-content: center;
   overflow: hidden;
-  padding: clamp(16px, 3vw, 30px);
+  padding: clamp(8px, 1.7vw, 18px) clamp(14px, 3vw, 30px);
 }
 
 .sheet-frame {
   display: block;
   width: min(92vw, 960px);
-  height: min(52vw, calc(100svh - 178px));
+  height: min(52vw, calc(100svh - 130px));
   min-height: 520px;
   border: 2px solid rgba(0, 94, 161, 0.18);
   border-radius: 8px;
