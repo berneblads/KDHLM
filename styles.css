@@ -156,12 +156,28 @@ nav a:hover,
   min-height: calc(100svh - 79px);
 }
 
+.valstuga-info {
+  max-width: 960px;
+  margin: 10px auto 0;
+  padding: 0 clamp(14px, 3vw, 30px);
+  color: var(--kd-blue-ink);
+  font-size: clamp(1rem, 1.4vw, 1.12rem);
+  font-weight: 700;
+}
+
+.valstuga-info a {
+  color: var(--kd-blue);
+  font-weight: 900;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
 .sheet-section {
   display: flex;
   align-items: flex-start;
   justify-content: center;
   overflow: hidden;
-  padding: clamp(6px, 1vw, 12px) clamp(14px, 3vw, 30px);
+  padding: 8px clamp(14px, 3vw, 30px) clamp(6px, 1vw, 12px);
 }
 
 .sheet-frame {
@@ -1207,8 +1223,8 @@ footer a:hover {
 
   .sheet-frame {
     width: 100%;
-    height: min(78svh, 720px);
-    min-height: 560px;
+    height: min(74svh, 700px);
+    min-height: 520px;
   }
 
   .candidate-photo {
