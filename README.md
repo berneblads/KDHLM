@@ -46,7 +46,7 @@ Vite har uttryckliga lokala adaptrar för `/api/representatives`, `/api/media` o
 
 Uppdatera den sparade reservkopian med `npm run sync:directory` före ett framtida bygge. Lägg bara verifierade nyheter i `siteContent.subpages.articles` med stabilt `id`/`slug`, `published: true`, datum, kategori, titel, ingress, bild, alternativtext och `paragraphs`. Nyhetsflödet visar exempelartiklar enbart i lokal exempelvy; deras separata granskningssidor är alltid märkta och har `noindex`.
 
-Kontaktformuläret skickar meddelanden via POST /api/contact och Resend. Besökaren får en bekräftelse först när e-posttjänsten accepterat meddelandet; vid fel behålls alla fält. Mottagaren är låst på servern till hassleholm@kristdemokraterna.se, och Reply-To är besökarens adress. Inget automatiskt svar skickas till besökaren. Meddelandet sparas inte av webbservern men behandlas av Resend och mottagarens e-postsystem.
+Kontaktformuläret är tillfälligt borttaget från den publika kontaktsidan. E-postadressen hassleholm@kristdemokraterna.se visas fortsatt tydligt och är klickbar. API-koden för formuläret finns kvar oanvänd så funktionen kan återaktiveras senare.
 
 För att aktivera leverans: konfigurera RESEND_API_KEY och CONTACT_FROM_EMAIL på servern. Avsändaren måste tillhöra en verifierad domän i Resend. Lokalt kan värdena ligga i .env.local (starta om Vite); vid publicering anges de som servervariabler. Hemligheterna får aldrig ha VITE_-prefix. Se [Resends API-dokumentation](https://resend.com/docs/api-reference/emails/send-email). Utan konfiguration svarar API:t med 503, aldrig med en falsk skickat-bekräftelse. Verklig leverans är ännu inte verifierad.
 
@@ -54,7 +54,7 @@ Vite dev och preview har en lokal adapter för kontakt-API:t. Produktion kräver
 
 Kör node --test tests/contact.test.js för API-validering och simulerad e-postleverans. Kör node scripts/verify-contact.js för webbläsarflödet med simulerade svar samt kontroll av lokalt API. Dessa tester skickar inga riktiga mejl.
 
-`npm run test:subpages` kontrollerar alla sex sidtyper vid 1024, 1440, 390 och 320 px, kortlänkar, förslag, artikelkategorier, sökning, styrelsen, kontaktformulärets skickaflöde samt automatisk uppdatering och felhantering. Skärmbilder ligger i `artifacts/sub-*-BREDD.png`. Den här delen jämförs med den nya sexdelade undersidesmockupen; noteringen längre ned om saknad exakt startsidesmockup avser endast startsidans tidigare arbete.
+`npm run test:subpages` kontrollerar alla sex sidtyper vid 1024, 1440, 390 och 320 px, kortlänkar, förslag, artikelkategorier, sökning, styrelsen, kontaktuppgifterna samt automatisk uppdatering och felhantering. Skärmbilder ligger i `artifacts/sub-*-BREDD.png`. Den här delen jämförs med den nya sexdelade undersidesmockupen; noteringen längre ned om saknad exakt startsidesmockup avser endast startsidans tidigare arbete.
 
 ## Starta och bygg
 

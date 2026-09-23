@@ -1,4 +1,3 @@
-import {verifyContact} from './verify-contact.js';
 import {chromium,expect} from '@playwright/test';
 import assert from 'node:assert/strict';
 import {readFile,writeFile} from 'node:fs/promises';
@@ -24,7 +23,7 @@ try{
   }else{await p.locator('.person-details summary').click();await expect(p.locator('.person-contact a[href^="mailto:"]')).toBeVisible();}await p.locator('#people-search').fill('Finns inte 777');await expect(p.locator('.empty-state')).toBeVisible();await p.locator('#people-search').fill('');await p.getByRole('button',{name:'Styrelsen',exact:true}).click();await expect(p.locator('#people-grid>.person-card')).toHaveCount(4);await p.locator('#people-more').click();await expect(p.locator('#people-grid>.person-card')).toHaveCount(8);
   }
   checks.push('Both directory pages: search, empty result, role filters, expansion, contacts and pagination');
-  await verifyContact(p,base);checks.push('Contact form: validation, failures, retry, success and responsive layout');
+  await p.goto(base+'/kontakt.html');await expect(p.locator('#contact-form')).toHaveCount(0);await expect(p.locator('#contact-details')).toContainText('hassleholm@kristdemokraterna.se');await expect(p.locator('#contact-details a[href="mailto:hassleholm@kristdemokraterna.se"]')).toBeVisible();checks.push('Contact page shows the email address without a form');
   const pages=['aktuellt','politik','politik-2022-2026','politik-kultur-och-fritid','fortroendevalda','om-oss','kontakt'];
   for(const width of [1024,1440,390,320]){
     await p.setViewportSize({width,height:width<761?844:950});

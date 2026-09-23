@@ -242,31 +242,13 @@ async function initSubpage() {
   }
   if(page==='people'||page==='about') await initDirectory(page);
   if(page==='contact') {
-    for(const [id,value] of Object.entries({'form-heading':t.formHeading,'name-label':t.nameLabel,'email-label':t.emailLabel,'message-label':t.messageLabel,'form-explanation':t.formExplanation,'contact-submit':t.formButton,'contact-details-heading':t.detailsHeading}))$('#'+id).textContent=value;
-    $('#contact-message').placeholder=t.messagePlaceholder;
+    $('#contact-details-heading').textContent=t.detailsHeading;
     for(const item of [{icon:'mail',title:t.emailHeading,text:c.contact.email,href:'mailto:'+c.contact.email},{icon:'phone',title:t.phoneHeading,text:c.contact.phone,href:'tel:'+c.contact.phone.replace(/[^+\d]/g,'')},{icon:'people',title:t.representativesHeading,text:t.representativesDescription,href:'/fortroendevalda.html'}]){const row=el('div',undefined,'contact-detail');const a=el('a',item.text);a.href=item.href;row.append(lineIcon(item.icon),el('div'));row.lastChild.append(el('h3',item.title),a);$('#contact-details').append(row);}
     $('#contact-details').append(el('p',c.contact.address,'contact-address'));
     $('#contact-meet').append(lineIcon('calendar'),el('div'));$('#contact-meet div').append(el('h2',t.meetHeading),el('p',t.meetText),link(t.meetLink,'/#traffa-oss'));
     $('#contact-social').append(el('h2',t.followHeading));
     for (const name of ['facebook','instagram']) { const a=link('',c.links[name],'social-icon');a.setAttribute('aria-label',name==='facebook'?'Facebook':'Instagram');a.append(lineIcon(name));$('#contact-social').append(a); }
     $('#contact-social').append(el('p',t.followText));
-    let sending=false,submissionId=crypto.randomUUID();
-    $('#contact-form').addEventListener('submit',async e=>{
-      e.preventDefault();if(!e.currentTarget.reportValidity())return;
-      if(sending)return;
-      const form=e.currentTarget,button=$('#contact-submit'),status=$('#form-status');
-      const name=$('#contact-name').value.trim(),email=$('#contact-email').value.trim(),message=$('#contact-message').value.trim();
-      if(!name||!message){status.textContent=t.formInvalid;status.dataset.state='error';return;}
-      sending=true;button.disabled=true;button.textContent=t.formSending;form.setAttribute('aria-busy','true');status.textContent=t.formSending;delete status.dataset.state;
-      const fields=[...form.querySelectorAll('input,textarea')];fields.forEach(field=>field.readOnly=true);
-      try{
-        const response=await fetch('/api/contact',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({name,email,message,website:$('#contact-website').value,submissionId}),signal:AbortSignal.timeout(15000)});
-        const result=await response.json();
-        if(!response.ok||result.ok!==true){status.textContent=result.code==='rate_limit'?t.formRateLimit:result.code==='invalid'?t.formInvalid:t.formError;status.dataset.state='error';return;}
-        form.reset();submissionId=crypto.randomUUID();status.textContent=t.formSent;status.dataset.state='success';
-      }catch{status.textContent=t.formError;status.dataset.state='error';}
-      finally{sending=false;button.disabled=false;button.textContent=t.formButton;form.removeAttribute('aria-busy');fields.forEach(field=>field.readOnly=false);}
-    });
   }
 }
 
