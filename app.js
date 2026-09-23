@@ -1,4 +1,5 @@
 import './content.js';
+import './speed-insights.js';
 import { initPoliticsExplorer } from './politics-explorer.js';
 import { initPolicyFocus } from './policy-focus.js';
 import { initMedia } from './media.js';
