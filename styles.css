@@ -345,7 +345,7 @@ dialog{border:0;border-radius:3px;color:var(--navy);padding:32px;max-width:520px
 .subpage.home-page .sub-hero-inner{min-height:420px;isolation:isolate;justify-content:flex-start}
 .subpage.home-page .sub-hero #sub-image{position:absolute;inset:0;width:100%;height:100%;mask-image:none;z-index:-4}
 .subpage.home-page .hero-portrait{position:absolute;right:max(24px,calc((100% - 1040px)/2));bottom:0;width:auto;height:100%;max-width:none;z-index:0;pointer-events:none}
-.subpage.home-page .hero-portrait-pair{height:135%}
+.subpage.home-page .hero-portrait-pair{right:max(0px,calc((100% - 1180px)/2));bottom:-42%;height:190%}
 .subpage.home-page .sub-hero-inner::before{content:'';position:absolute;inset:0;z-index:-3;background:url('./assets/Sverigedrommen-bakgrund.webp') center/cover no-repeat;opacity:.25;pointer-events:none}
 .subpage.home-page .sub-hero-inner::after{content:'';position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,rgba(0,24,52,.82),rgba(0,24,52,.5) 48%,rgba(0,24,52,.1));pointer-events:none}
 .subpage.home-page .sub-hero-copy{width:min(58%,620px);margin-left:max(32px,calc((100% - 1040px)/2));padding:62px 24px 62px 0;color:white}
@@ -359,7 +359,7 @@ dialog{border:0;border-radius:3px;color:var(--navy);padding:32px;max-width:520px
 @media(max-width:760px){
  .subpage.home-page .sub-hero-inner{min-height:570px;padding-bottom:320px;justify-content:flex-start;align-items:flex-start}
  .subpage.home-page .hero-portrait{height:320px;right:calc(50% - 190px)}
- .subpage.home-page .hero-portrait-pair{height:430px;right:50%;transform:translateX(50%)}
+ .subpage.home-page .hero-portrait-pair{height:620px;right:50%;bottom:-140px;transform:translateX(50%)}
  .subpage.home-page .sub-hero-copy{width:100%;margin-left:0;padding:40px 24px}
  .subpage.home-page .sub-hero h1{font-size:clamp(43px,10vw,62px);max-width:480px}
  .subpage.home-page .hero-quote{max-width:440px}
