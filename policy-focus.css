@@ -1,0 +1,39 @@
+.policy-focus{padding:54px 0;background:var(--beige)}
+.policy-focus h2{font-size:clamp(32px,4vw,46px);max-width:700px}
+.focus-tabs{display:flex;flex-wrap:wrap;gap:8px;margin:26px 0}
+.focus-tab{border:1px solid var(--line);border-radius:4px;background:white;padding:10px 18px;min-height:44px;font-weight:600}
+.focus-tab:hover{border-color:var(--blue);color:var(--blue)}
+.focus-tab[aria-selected=true]{background:var(--blue);border-color:var(--blue);color:white}
+.focus-panel{display:grid;grid-template-columns:1fr 1fr;gap:48px;background:white;border:1px solid var(--line);border-radius:8px;padding:36px}
+.focus-panel:focus-visible{outline:3px solid var(--sky);outline-offset:4px}
+.focus-copy,.focus-proposals{min-width:0}
+.focus-copy h3{font-size:32px;max-width:440px}
+.focus-intro{margin-top:16px;line-height:1.6}
+.focus-summary{border-top:1px solid var(--line);margin-top:24px;padding-top:20px}
+.policy-focus h4{font-family:var(--heading);font-size:23px;line-height:1.2;margin:0 0 16px}
+.focus-summary ul{padding-left:20px;margin:12px 0 22px}
+.focus-summary li{padding-left:4px;margin-bottom:10px}
+.focus-summary li::marker{color:var(--blue)}
+.focus-more{font-weight:600}
+.focus-proposal-description{line-height:1.5}
+.focus-proposal-source{color:white;font-weight:600}
+.focus-random{display:flex;margin:16px auto 0;min-height:44px}
+.focus-proposal-card{position:relative;display:flex;flex-direction:column;justify-content:space-between;gap:30px;background:linear-gradient(135deg,rgba(0,38,62,.78),rgba(0,38,62,.88)),url('./assets/Sverigedrommen-bakgrund.webp') center/cover no-repeat,var(--blue);color:white;border-radius:6px;min-height:250px;padding:28px}
+.focus-proposal-card .eyebrow{padding-right:40px;font-size:13px}
+.focus-proposal-number{position:absolute;right:24px;top:18px;font:700 40px var(--heading);color:#b6e1f5}
+.focus-proposal-text{font:700 clamp(25px,2.4vw,32px)/1.2 var(--heading);overflow-wrap:anywhere}
+.focus-controls{display:flex;align-items:center;justify-content:space-between;margin:16px 0 8px;font-variant-numeric:tabular-nums}
+.focus-controls .arrow-button{width:44px;height:44px;background:white;border:1px solid var(--line);border-radius:50%}
+.focus-controls .arrow-button:hover{background:var(--beige)}
+.focus-dots{display:flex;flex-wrap:wrap;justify-content:center}
+.focus-dots button{display:grid;place-items:center;width:28px;height:32px;padding:0;border:0;background:transparent}
+.focus-dots button::after{content:'';width:7px;height:7px;border-radius:50%;background:#a6b5bf}
+.focus-dots button[aria-current=true]::after{background:var(--blue);width:10px;height:10px}
+@media(max-width:760px){
+ .policy-focus{padding:34px 0}
+ .focus-tabs{gap:7px;margin:22px 0}
+ .focus-tab{padding:9px 12px}
+ .focus-panel{grid-template-columns:1fr;gap:28px;padding:22px}
+ .focus-copy h3{font-size:28px}
+ .focus-proposal-card{padding:22px;min-height:240px}
+}

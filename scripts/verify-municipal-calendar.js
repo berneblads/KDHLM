@@ -1,0 +1,31 @@
+import { chromium, expect } from '@playwright/test';
+import assert from 'node:assert/strict';
+const browser = await chromium.launch({channel:'msedge',headless:true});
+try {
+  const page = await browser.newPage({viewport:{width:1440,height:1000}});
+  await page.clock.setFixedTime(new Date('2026-09-23T10:00:00Z'));
+  await page.route('**/api/calendar', route => route.fulfill({status:503,json:{events:[],available:false}}));
+  await page.goto((process.env.TEST_BASE_URL || 'http://127.0.0.1:4173') + '/#traffa-oss');
+  await expect(page.locator('#calendar-list .event')).toHaveCount(3);
+  while (await page.locator('#calendar-more').isVisible()) await page.locator('#calendar-more').click();
+  await expect(page.locator('#calendar-list .event')).toHaveCount(39);
+  await expect(page.locator('#calendar-list')).not.toContainText('Inlämning');
+  await expect(page.locator('#calendar-list')).not.toContainText('Berednings-AU');
+  await page.locator('#month-view').click();
+  await page.locator('#month-next').click();
+  await expect(page.locator('#month-heading')).toHaveText('oktober 2026');
+  await expect(page.locator('#month-grid button')).toHaveCount(0);
+  await page.locator('#month-next').click();
+  await expect(page.locator('#month-grid button')).toHaveCount(1);
+  for(let i=0;i<2;i++) await page.locator('#month-next').click();
+  await expect(page.locator('#month-heading')).toHaveText('januari 2027');
+  await page.locator('#month-grid button').filter({hasText:'Kommunfullmäktige'}).click();
+  await expect(page.locator('#month-details')).toContainText('19:00');
+  const downloadPromise = page.waitForEvent('download');
+  await page.locator('#month-details .event-actions button').last().click();
+  assert.equal((await downloadPromise).suggestedFilename(),'kommun-kf-2027-01-25.ics');
+  await page.setViewportSize({width:390,height:844});
+  await page.locator('#list-view').click();
+  assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth));
+  console.log('PASS 39 meetings only: KSAU, KS and KF; month boundaries, special KF time, ICS download and mobile layout.');
+} finally {await browser.close();}

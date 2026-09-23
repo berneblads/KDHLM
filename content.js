@@ -1,313 +1,112 @@
-window.siteContent = {
-  pageTitle: "KD Hässleholm | Valprogram 2026-2030 | Tro på Hässleholm",
-  metaDescription:
-    "Kristdemokraterna i Hässleholms valprogram 2026-2030. Läs KD:s förslag för omsorg, skola, trygghet, ekonomi, landsbygd, kransorter och hela kommunen.",
-  nav: {
-    start: "Start",
-    statement: "Utgångspunkt",
-    politics: "Vår politik",
-    focus: "Fokusfråga",
-    candidates: "Kandidater",
-    proposals: "Förslag",
-    local: "Lokalt",
-    pdf: "Valprogram",
-    channels: "Kanaler",
-    action: "Bli en del av Team Busch"
+// All editorial content lives here. Asset URLs are resolved by Vite at build time.
+import { debateArticles } from './debate-articles.js';
+import { withArticleImage } from './article-images.js';
+const asset = (name) => new URL(`./assets/${name}`, import.meta.url).href;
+export const siteContent = {
+  siteURL: 'https://kdhlm.se',
+  integrations: { calendar: '/api/calendar', facebook: '/api/facebook', refreshMs: 300000 },
+  links: {
+    membership: 'https://kristdemokraterna.se/engagera-dig/ansok-om-medlemskap-i-kristdemokraterna',
+    representatives: 'https://kristdemokraterna.se/vart-parti/foretradare/kd-lokalt/skane/hassleholm',
+    program: '/Valprogram%20KD%20H%C3%A4ssleholm%202026.pdf',
+    facebook: 'https://www.facebook.com/kdhassleholm/',
+    instagram: 'https://www.instagram.com/kristdemokraterna/',
   },
-  hero: {
-    eyebrow: "Kristdemokraterna Hässleholm",
-    title: "Tro på Hässleholm!",
-    lead: "",
-    primaryButton: "Läs kommunala förslag",
-    secondaryButton: "Läs nationella förslag",
-    badgeLabel: "Viljeinriktning för",
-    badgeYear: "2026 - 2030",
-    badgeText: "För omsorg, skola, ekonomi, orter och framtidstro."
-  },
-  statement: {
-    eyebrow: "Utgångspunkt",
-    title: "Hässleholm kan bättre",
-    text:
-      "Hässleholm är i grunden en stark kommun med engagerade människor, livskraftiga orter och ett rikt föreningsliv. Men styrningen har tappat fokus på det viktigaste: att få vardagen att fungera. Trots många planer och visioner upplever invånarna en kommun som blivit dyrare, mer centraliserad och mindre lyhörd. Kristdemokraterna vill förändra en styrmodell som inte levererar och sätta människan, familjen, föreningslivet, landsbygden och kransorterna i centrum.",
-    imageAlt:
-      "Simon Berneblad Mandegård och Erika Heil Utbult, toppkandidater för Kristdemokraterna i Hässleholm.",
-    caption: "Simon Berneblad Mandegård & Erika Heil Utbult - toppkandidater"
-  },
-  politics: {
-    eyebrow: "Vår politik",
-    title: "Klicka på ett område"
-  },
-  focus: {
-    eyebrow: "Fokusfråga",
-    title: "Välj område. Få beskeden direkt.",
-    selectedEyebrow: "Valt område",
-    summaryTitle: "Tre saker att ta med sig",
-    proposalsTitle: "Förslagen, kort förklarade",
-    reasonLabel: "Därför:",
-    readMore: "Läs mer"
-  },
-  promise: {
-    eyebrow: "Förslagskort",
-    text: "",
-    randomButton: "Tryck här för att läsa nytt förslag",
-    prevLabel: "Föregående nationella förslag",
-    nextLabel: "Nästa nationella förslag",
-    backgroundImage: "assets/optimized/ebba-bg.jpg"
-  },
-  nationalProposals: [
-    {
-      area: "Familj",
-      title: "Gör föräldraförsäkringen mer flexibel",
-      text:
-        "KD vill säga nej till kvotering, skydda föräldraledigas inkomst längre och låta fler dagar användas som dubbeldagar.",
-      source: "https://kristdemokraterna.se/var-politik/politikomraden/familj"
-    },
-    {
-      area: "Familj",
-      title: "Inför tak för småbarnsgrupper i förskolan",
-      text:
-        "KD vill lagstifta om max 12 barn i småbarnsgrupper för mer trygghet, anknytning och tid för varje barn.",
-      source: "https://kristdemokraterna.se/var-politik/politikomraden/familj"
-    },
-    {
-      area: "Familj",
-      title: "Stärk föräldrastöd och familjerådgivning",
-      text:
-        "KD vill att kommuner ska erbjuda föräldrastödsprogram och sänka trösklarna till familjerådgivning.",
-      source: "https://kristdemokraterna.se/var-politik/politikomraden/familj"
-    },
-    {
-      area: "Bostad",
-      title: "Gör bostadsmarknaden mer rörlig",
-      text:
-        "KD vill ta bort taket för uppskov på reavinstskatten vid ny bostad och kraftigt reducera amorteringskraven.",
-      source: "https://kristdemokraterna.se/var-politik/politikomraden/bostad"
-    },
-    {
-      area: "Bostad",
-      title: "Gör det möjligt för fler att äga sitt hem",
-      text:
-        "KD vill använda startlån, bosparande och förändrade tomträttsregler för att fler med vanliga inkomster ska kunna äga bostad.",
-      source: "https://kristdemokraterna.se/var-politik/politikomraden/bostad"
-    },
-    {
-      area: "Bostad",
-      title: "Minska krånglet för den som vill bygga",
-      text:
-        "KD vill förenkla regler så fler kan bygga ut, dela upp bostäder och skapa hem på redan använd tomtmark.",
-      source: "https://kristdemokraterna.se/var-politik/politikomraden/bostad"
-    },
-    {
-      area: "Jord & skogsbruk",
-      title: "Öka svensk självförsörjning",
-      text:
-        "KD vill stärka lönsamheten i svenskt jordbruk så Sverige kan producera mer livsmedel även i fredstid.",
-      source: "https://kristdemokraterna.se/var-politik/politikomraden/jord--skogsbruk"
-    },
-    {
-      area: "Jord & skogsbruk",
-      title: "Minska regelkrånglet för bönder",
-      text:
-        "KD vill ha färre men tydligare regler för jordbruksnäringen så lantbrukare får bättre förutsättningar att producera.",
-      source: "https://kristdemokraterna.se/var-politik/politikomraden/jord--skogsbruk"
-    },
-    {
-      area: "Jord & skogsbruk",
-      title: "Värna äganderätten i skogen",
-      text:
-        "KD vill stå upp för enskilt ägande och brukande av skog under frihet och ansvar.",
-      source: "https://kristdemokraterna.se/var-politik/politikomraden/jord--skogsbruk"
-    },
-    {
-      area: "Äldre",
-      title: "Mer medicinsk kompetens i äldreomsorgen",
-      text:
-        "KD vill stärka kommunal vård med bättre medicinsk kompetens och möjlighet för kommuner att säkra läkartillgång.",
-      source: "https://kristdemokraterna.se/var-politik/politikomraden/aldre"
-    },
-    {
-      area: "Äldre",
-      title: "Inför äldreboendegaranti",
-      text:
-        "KD vill ge personer över 85 år en lagstadgad rätt till anpassat boende när de själva vill och behöver det.",
-      source: "https://kristdemokraterna.se/var-politik/politikomraden/aldre"
-    },
-    {
-      area: "Äldre",
-      title: "Förbättra villkoren för omsorgspersonal",
-      text:
-        "KD vill minska delade turer, stärka medarbetarnöjdheten och avlasta chefer i äldreomsorgen.",
-      source: "https://kristdemokraterna.se/var-politik/politikomraden/aldre"
-    },
-    {
-      area: "Vård & omsorg",
-      title: "Inrätta nationell vårdförmedling",
-      text:
-        "KD vill använda ledig vårdkapacitet i hela landet så patienter snabbare kan få vård när vårdgarantin passerats.",
-      source: "https://kristdemokraterna.se/var-politik/politikomraden/vard--omsorg"
-    },
-    {
-      area: "Vård & omsorg",
-      title: "Fler vårdplatser och starkare kapacitet",
-      text:
-        "KD vill öka antalet vårdplatser och koppla statlig ersättning till minskade överbeläggningar och bättre kapacitet.",
-      source: "https://kristdemokraterna.se/var-politik/politikomraden/vard--omsorg"
-    },
-    {
-      area: "Vård & omsorg",
-      title: "Ge staten huvudansvar för sjukvården",
-      text:
-        "KD vill samla huvudansvaret nationellt för en mer jämlik, effektiv och högkvalitativ vård i hela landet.",
-      source: "https://kristdemokraterna.se/var-politik/politikomraden/vard--omsorg"
-    }
+  navigation: [
+    { label: 'Aktuellt', href: '/' }, { label: 'Vår politik', href: '/politik.html' },
+    { label: 'Om oss', href: '/om-oss.html' }, { label: 'Kontakt', href: '/kontakt.html' },
+    { label: 'Bli medlem', link: 'membership', primary: true },
   ],
-  local: {
-    eyebrow: "Kristdemokraterna",
-    title: "Tror på Hässleholm",
-    text: "",
-    cta: "Bli en del av Team Busch",
-    ctaUrl:
-      "https://kristdemokraterna.se/engagera-dig/ansok-om-medlemskap-i-kristdemokraterna",
-    image: "assets/optimized/tro-pa-hassleholm.jpg",
-    imageAlt: "Tro på Hässleholm"
+  footerNavigation: [
+    { label: 'Kontakt', href: '/kontakt.html' }, { label: 'Förtroendevalda', href: '/fortroendevalda.html' },
+    { label: 'Vårt politiska program', link: 'program' }, { label: 'Facebook', link: 'facebook' },
+    { label: 'Instagram', link: 'instagram' },
+    { label: 'Om oss', href: '/om-oss.html' },
+  ],
+  text: {
+    heroEyebrow: 'KRISTDEMOKRATERNA I HÄSSLEHOLM',
+    leaderEyebrow: 'SENASTE FRÅN GRUPPLEDAREN', leaderHeading: 'En inblick i vårt arbete.',
+    readPost: 'Läs hela inlägget', closePost: 'Stäng inlägget',
+    calendarEyebrow: 'TRÄFFA OSS', calendarHeading: 'Kommande möten och aktiviteter.',
+    listView: 'Lista', monthView: 'Månad', moreEvents: 'Visa fler tillfällen ↓',
+    facebookEyebrow: 'FRÅN FACEBOOK', facebookHeading: 'KD Hässleholm.',
+    morePosts: 'Ladda fler inlägg ↓', facebookLink: 'Besök KD på Facebook ↗',
+    membershipHeading: 'BLI EN DEL AV\nKD HÄSSLEHOLM',
+    membershipText: 'Tillsammans kan vi göra skillnad.\nBli medlem och var med och forma ett bättre Hässleholm.',
+    membershipButton: 'Bli medlem →',
+    politicsEyebrow: 'VALPROGRAM 2026–2030', politicsHeading: 'Tro på Hässleholm!',
+    politicsIntro: 'Här finns politikområdena och förslagen från det befintliga valprogrammet, samlade på ett ställe.',
+    programButton: 'Läs hela valprogrammet (PDF) ↗', candidatesHeading: 'Möt laget bakom programmet',
+    nationalHeading: 'Nationella förslag',
+    calendarExample: 'EXEMPELVY · Aktiviteterna är demonstrationer, inte bokade möten.',
+    facebookExample: 'EXEMPELVY · Korten visar exempel, inte publicerade Facebookinlägg.',
+    calendarEmpty: 'Inga kommande aktiviteter är publicerade just nu. Hör gärna av dig till oss.',
+    calendarUnavailable: 'Kalendern kan inte visas just nu. Kontakta oss för information om kommande träffar.',
+    facebookUnavailable: 'Inläggen kan inte visas här just nu. Du hittar KD på Facebook via länken nedan.',
+    facebookEmpty: 'Inga inlägg finns att visa just nu.',
+    leaderEmpty: 'Här kommer gruppledarens senaste publicerade inlägg. Kontakta oss om du vill veta mer om vårt arbete.',
+    cancelled: 'Inställt', showPlace: 'Visa plats', addCalendar: 'Lägg till i min kalender',
+    showMore: 'Visa mer', showLess: 'Visa mindre', example: 'EXEMPELINNEHÅLL',
+    mapConsent: 'Kartan laddas från OpenStreetMap först när du väljer att visa den. Då delas din IP-adress med karttjänsten.',
+    mapLoad: 'Visa karta från OpenStreetMap', mapUnavailable: 'Platsen visas med adress. En karta kan läggas till när koordinater har verifierats.',
+    weekdays: ['Mån', 'Tis', 'Ons', 'Tor', 'Fre', 'Lör', 'Sön'],
   },
-  candidatesSection: {
-    eyebrow: "Våra kandidater",
-    title: "Möt KD-laget i Hässleholm",
-    text: "Tryck på korten för en kortare presentation av kandidaterna.",
-    candidates: [
-     {
-  name: "Simon Berneblad Mandegård",
-  role: "#1 på kommunlistan",
-  description: "Driver frågor om äldreomsorg, trygghet och ett rikt kultur- och fritidsliv.",
-  image: "assets/optimized/candidate-sb.jpg"
-},
-{
-  name: "Erika Heil Utbult",
-  role: "#2 på kommunlistan",
-  description: "Fokuserar på omsorg, närhet och ett starkare lokalsamhälle.",
-  image: "assets/optimized/candidate-ehb.jpg",
-  imagePosition: "55% center",
-  imageScale: 1.12
-},
-{
-  name: "Christer Caesar",
-  role: "#3 på kommunlistan",
-  description: "Vill se ordning, ansvar och långsiktighet i kommunens ekonomi och styrning.",
-  image: "assets/optimized/candidate-cc.jpg",
-  imagePosition: "50% center",
-  imageScale: 1.12
-},
-{
-  name: "Elias Höghäll",
-  role: "#4 på kommunlistan",
-  description: "Lyfter ungas villkor, framtidstro och möjligheten att växa upp och stanna i kommunen.",
-  image: "assets/optimized/candidate-eh.jpg",
-  imagePosition: "58% 18%",
-  imageScale: 1,
-  imageX: "0",
-  imageY: "0"
-},
-{
-  name: "Mats Björklund",
-  role: "#5 på kommunlistan",
-  description: "Driver frågor om socialtansvar, service och utveckling.",
-  image: "assets/optimized/candidate-mats-b.jpg",
-  imagePosition: "67% center",
-  imageScale: 1.12,
-  imageX: "0"
-},
-{
-  name: "Pär Palmgren",
-  role: "#6 på kommunlistan",
-  description: "Fokuserar på infrastruktursfrågor, en kommun som förvaltar ekonomin väl och en kommun som håller ihop.",
-  image: "assets/optimized/candidate-par-palmgren.jpg"
-},
-{
-  name: "Roland Blomqvist",
-  role: "#7 på kommunlistan",
-  description: "Vill stärka samhällsplanering, infrastruktur och minska krånglet för medborgaren.",
-  image: "assets/optimized/candidate-roland-blomqvist.jpg"
-},
-{
-  name: "Tobias Eriksson",
-  role: "#8 på kommunlistan",
-  description: "Driver frågor om trygghet, digital säkerhet och en modernare kommunal service.",
-  image: "assets/optimized/candidate-tobias-eriksson.jpg",
-  imagePosition: "50% 18%",
-  imageScale: 1,
-  imageX: "0",
-  imageY: "0"
-},
-{
-  name: "Marie Juhlin",
-  role: "#9 på kommunlistan",
-  description: "Fokuserar på vård, omsorg och trygghet för äldre och anhöriga.",
-  image: "assets/optimized/candidate-marie-juhlin.jpg",
-  imagePosition: "center center",
-  imageX: "0",
-  imageY: "-6%"
-},
-{
-  name: "Gilbert Nathell",
-  role: "#10 på kommunlistan",
-  description: "Lyfter vikten av en fungerande skolgång, tryggheten och vikten av levande orter i hela kommunen.",
-  image: "assets/optimized/candidate-gilbert-nathell.jpg",
-  imagePosition: "center 32%",
-  imageScale: 1
-}
-    ]
+  leaderPosts: [], // Add verified, published posts; schema is documented in README.md.
+  contact: { title: 'Kontakta KD Hässleholm', name: 'Kristdemokraterna i Hässleholm', email: 'hassleholm@kristdemokraterna.se', phone: '076-329 92 31', address: 'Åkaregatan 14, 281 38 Hässleholm', sourceLabel: 'Officiella kontaktuppgifter ↗' },
+  brandName: 'HÄSSLEHOLM',
+  images: { logo: asset('logo.png'), whiteLogo: asset('logo-vit.png'), avenue: asset('avenyn.jpg'), meeting: asset('motesplatser.jpg'), candidates: asset('toppkandidater.jpg') },
+};
+
+siteContent.subpages = {
+  heroes: {
+    home: { title:'TRO PÅ HÄSSLEHOLM', intro:'Tack för ditt stöd och din röst i valet', image:asset('avenyn.jpg'), alt:'Avenyn i Hässleholm', position:'center 52%' },
+    news: { title:'AKTUELLT\nI HÄSSLEHOLM', intro:'Nyheter och kommentarer\nfrån vårt arbete.', image:asset('avenyn.jpg'), alt:'Avenyn i Hässleholm' },
+    politics: { title:'VÅR POLITIK', intro:'Våra prioriteringar för kommunen.', image:asset('Humlesjön.jpg'), alt:'Humlesjön med badbrygga och skog längs stranden', position:'center 58%' },
+    'politics-archive': { title:'HÄSSLEHOLM 2022–2026', intro:'Vår tidigare lokala politik.', image:asset('Humlesjön.jpg'), alt:'Humlesjön med badbrygga och skog längs stranden', position:'center 58%' },
+    people: { title:'DINA FÖRTROENDEVALDA', intro:'Hitta rätt person och ta kontakt.', image:asset('Stadshuset.jpg'), alt:'Hässleholms stadshus med kommunflaggan', position:'center 38%' },
+    about: { title:'KD HÄSSLEHOLM', intro:'Människorna bakom föreningen.', image:asset('mockup-coffee.webp'), alt:'Illustrativ bild av kaffekoppar vid ett mötesbord, AI-genererad', position:'center 65%' },
+    contact: { title:'KONTAKTA OSS', intro:'Vi vill gärna höra från dig.', image:asset('Centrala Hässleholm.jpg'), alt:'Centrala Hässleholm med centralstationen i bakgrunden', position:'center 48%' },
   },
-  pdf: {
-    eyebrow: "",
-    title: "Vill du läsa hela valprogrammet?",
-    button: "Tryck här"
+  text: {
+    overview:'Vi vill ha ett Hässleholm som håller ihop, där människor kan växa och där framtidens generationer får goda förutsättningar. Här hittar du våra prioriterade politikområden.',
+    programHeading:'Läs vårt politiska program', programIntro:'Vår vision och våra förslag för ett starkare Hässleholm.', programDownload:'Ladda ner programmet →', programArchive:'Alla förslag och kandidater i valprogrammet →',
+    proposals:'Våra förslag', related:'Relaterade nyheter', relatedFallback:'Relaterat innehåll', areaIntro:'Här samlar vi vår politik och vårt arbete inom området.', areaQuestion:'Har du en fråga?', areaContact:'Kontakta oss så berättar vi mer om vår politik.', contactForm:'Till kontaktformuläret →',
+    newsFilters:['Alla','Nyheter','Debatt'], moreNews:'Visa fler artiklar', newsExample:'EXEMPELVY · Exempeltexter, inga publicerade nyheter.', newsEmpty:'Här publicerar vi nyheter och kommentarer från vårt arbete. Inga artiklar är publicerade ännu.', readArticle:'Läs mer →',
+    peopleFilters:[{id:'all',label:'Alla'},{id:'council',label:'Fullmäktige'},{id:'committees',label:'Nämnder'},{id:'board',label:'Styrelsen'}], search:'Sök namn eller uppdrag', peopleMore:'Visa fler förtroendevalda', peopleEmpty:'Ingen person matchar din sökning.', portraitMissing:'Porträtt saknas', email:'Skicka e-post', call:'Ring upp', profile:'Se officiell presentation ↗', directorySource:'Uppgifter från Kristdemokraternas officiella sida ↗', directoryLoading:'Hämtar aktuella uppgifter…', directoryFallback:'Visar senast hämtade uppgifter.',
+    boardHeading:'Vår styrelse',
+    aboutCtaHeading:'Bli en del av KD Hässleholm', aboutCtaText:'Tillsammans kan vi göra skillnad. Bli medlem och var med och forma ett bättre Hässleholm.', memberButton:'Bli medlem →',
+    formHeading:'Skicka ett meddelande', nameLabel:'Namn', emailLabel:'E-post', messageLabel:'Meddelande', messagePlaceholder:'Skriv ditt meddelande här …', formExplanation:'Ditt meddelande skickas till KD Hässleholm. Vi svarar till e-postadressen du anger.', formButton:'Skicka meddelande →', formSending:'Skickar …', formSent:'Tack! Ditt meddelande har skickats. Vi svarar så snart vi kan.', formError:'Vi kunde inte bekräfta att meddelandet skickades. Din text finns kvar. Försök igen om en stund eller kontakta oss via e-post eller telefon.', formInvalid:'Fyll i namn, en giltig e-postadress och ett meddelande.', formRateLimit:'Du har gjort flera försök på kort tid. Vänta tio minuter och försök igen. Din text finns kvar.', detailsHeading:'Kontaktuppgifter', emailHeading:'E-postadress', emailDescription:'Vi svarar så snart vi kan.', phoneHeading:'Telefonnummer', phoneDescription:'Ring vår partiavdelning.', representativesHeading:'Hitta en förtroendevald', representativesDescription:'Sök bland våra förtroendevalda.', meetHeading:'Träffa oss', meetText:'Välkommen att träffa oss på möten och aktiviteter i Hässleholm. Hör av dig om du vill veta mer eller prata med oss om en lokal fråga. Kommande tillfällen hittar du i kalendern på startsidan.', meetLink:'Se kalendern på startsidan →', followHeading:'Följ oss', followText:'Följ KD i sociala kanaler.',
   },
-  footer: {
-    text: "Följ oss i våra andra kanaler",
-    topLink: "Till toppen"
+  about: {
+    paragraphs:['Kristdemokraterna i Hässleholm är en lokal förening med människor som vill göra skillnad i vår kommun. Vi tror på människans värdighet, gemenskap och ett samhälle som håller ihop.','Genom dialog, engagemang och konkreta förslag arbetar vi för ett Hässleholm där fler får möjlighet att växa.'],
   },
-  topicImages: {
-    O: "assets/optimized/topic-o.jpg",
-    S: "assets/optimized/topic-s.jpg",
-    V: "assets/optimized/topic-v.jpg",
-    M: "assets/optimized/topic-m.jpg",
-    K: "assets/optimized/topic-sk.jpg",
-    H: "assets/optimized/topic-h.jpg",
-    C: "assets/optimized/topic-c.jpg"
-  },
-  explanations: {
-    relatives:
-      "Gör det lättare för familjer och närstående som redan tar ett stort ansvar i vardagen.",
-    elderly:
-      "Flyttar fokus från sena insatser till trygghet, gemenskap och förebyggande arbete tidigare.",
-    school:
-      "Ska ge barn tydligare vuxna, bättre studiero och stöd innan små problem blir stora.",
-    transparency:
-      "Gör det enklare för invånare att se hur kommunen använder gemensamma pengar.",
-    maintenance:
-      "Prioriterar sådant som märks i vardagen: fungerande lokaler, trygg miljö och långsiktigt ansvar.",
-    transport:
-      "Knyter ihop orterna bättre så fler kan ta sig till arbete, skola, kultur och föreningsliv.",
-    campus:
-      "Bygger framtidstro genom utbildning, kompetensförsörjning och fler vägar till jobb.",
-    civilSociety:
-      "Tar vara på lokala krafter som ofta finns närmare människor än kommunens organisation.",
-    housing:
-      "Ska göra det lättare att hitta ett boende som passar olika livsskeden och familjesituationer.",
-    fallback:
-      "Visar hur {topic} kan bli mer konkret i människors vardag, inte bara en kommunal process."
-  },
-  topics: [
+  areas:[
+    {id:'omsorg',title:'Omsorg',subtitle:'Trygghet genom hela livet',icon:'heart',image:asset('skola.jpg'),alt:'Bild från den befintliga webbplatsen',groups:[{title:'Trygghet och värdighet',topic:'omsorg'},{title:'Mötesplatser och gemenskap',topic:'motesplatser'}]},
+    {id:'skola',title:'Skola',subtitle:'Kunskap för framtiden',icon:'school',image:asset('skola.jpg'),alt:'Förälder och barn, bild från den befintliga webbplatsen',groups:[{title:'En skola för varje barn',topic:'skola'}]},
+    {id:'kultur-och-fritid',title:'Kultur och fritid',subtitle:'Ett rikare liv i hela kommunen',icon:'people',image:asset('mockup-sports.webp'),alt:'Illustrativ bild av en ljus sporthall med blått golv, AI-genererad',groups:[{title:'Föreningsliv',topic:'varderingar',include:['kulturarv','mötesplatser']},{title:'Mötesplatser',topic:'motesplatser'},{title:'Idrott och rörelse',topic:'kommun',include:['simhallar']}]},
+    {id:'landsbygd',title:'Landsbygd',subtitle:'Levande orter och byar',icon:'leaf',image:asset('kommun.jpg'),alt:'Bild från den befintliga webbplatsens kommunavsnitt',groups:[{title:'Hela kommunen ska fungera',topic:'kommun'}]},
+    {id:'ekonomi',title:'Ekonomi',subtitle:'Ett ansvarsfullt samhällsbygge',icon:'chart',image:asset('avenyn.jpg'),alt:'Avenyn i Hässleholm',groups:[{title:'Ansvar för varje skattekrona',topic:'ekonomi'}]},
+    {id:'samhallsbyggnad',title:'Samhällsbyggnad',subtitle:'Hållbar tillväxt och livsmiljö',icon:'city',image:asset('avenyn.jpg'),alt:'Avenyn i Hässleholm',groups:[{title:'Campus och framtidstro',topic:'campus'},{title:'En kommun som håller ihop',topic:'varderingar'},{title:'Boende och kommunikationer',topic:'kommun',include:['vill','bost','trafik','avgång','station','väg']}]},
+  ],
+  articles: debateArticles.map(article => withArticleImage({ ...article, image: asset(article.image) })),
+  exampleArticles:[
+    {id:'example-news-1',slug:'vi-fortsatter-driva-viktiga-fragor-for-hassleholm',category:'Nyheter',title:'Vi fortsätter driva viktiga frågor för Hässleholm',intro:'Ett starkare lokalsamhälle genom dialog och långsiktighet.',image:asset('mockup-coffee.webp'),alt:'Illustrativ bild av kaffekoppar och anteckningsblock, AI-genererad',paragraphs:['Detta är en exempelartikel som visar sidans utformning. Texten beskriver inte en verklig rapport eller en genomförd aktivitet.','Verifierade nyheter kan läggas in centralt i content.js.']},
+    {id:'example-news-2',slug:'ett-hassleholm-dar-fler-far-vaxa',category:'Debatt',title:'Ett Hässleholm där fler får växa',intro:'Våra tankar om kommunens framtid och möjligheter.',image:asset('avenyn.jpg'),alt:'Avenyn i Hässleholm',paragraphs:['Exempeltext för kategorin Debatt. Ingen person har tillskrivits artikeln.']},
+    {id:'example-news-4',slug:'nara-vardagen-i-hela-kommunen',category:'Nyheter',title:'Nära vardagen i hela kommunen',intro:'Ett exempel på en äldre artikel.',image:asset('kommun.jpg'),alt:'Bild från befintlig webbplats',paragraphs:['Detta är ett exempel som används för att kontrollera knappen Visa fler artiklar.']},
+  ],
+};
+
+// Preserved editorial content from kdhlm.se, retrieved 2026-09-05.
+siteContent.politics = {
+  "topics": [
     {
-      id: "omsorg",
-      label: "Omsorg",
-      mark: "O",
-      accent: "#ffd62f",
-      title: "En tydlig prioritering: omsorg",
-      intro:
-        "Vardagen ska fungera först. Programmet lägger tyngd på kvalitet, trygghet, värdighet och bättre arbetsvillkor i omsorgen.",
-      bullets: [
+      "id": "omsorg",
+      "label": "Omsorg",
+      "mark": "O",
+      "accent": "#ffd62f",
+      "title": "En tydlig prioritering: omsorg",
+      "intro": "Vardagen ska fungera först. Programmet lägger tyngd på kvalitet, trygghet, värdighet och bättre arbetsvillkor i omsorgen.",
+      "bullets": [
         "Prioritera omsorgens kvalitet, trygghet och värdighet.",
         "Större möjlighet att välja kön på personal i intima situationer.",
         "Underhåll, säkerhet och tillgänglighet på äldreboenden.",
@@ -325,14 +124,13 @@ window.siteContent = {
       ]
     },
     {
-      id: "skola",
-      label: "Skola",
-      mark: "S",
-      accent: "#f1be8a",
-      title: "Skolan som nav",
-      intro:
-        "Skolan ska ge kunskap, trygghet och framtidstro. Ingen elev ska lämnas efter och ingen elev ska hållas tillbaka.",
-      bullets: [
+      "id": "skola",
+      "label": "Skola",
+      "mark": "S",
+      "accent": "#f1be8a",
+      "title": "Skolan som nav",
+      "intro": "Skolan ska ge kunskap, trygghet och framtidstro. Ingen elev ska lämnas efter och ingen elev ska hållas tillbaka.",
+      "bullets": [
         "Släppa fram idéburna, privata och föreningsdrivna alternativ.",
         "Värna föräldrars möjlighet att välja skola och barnomsorg.",
         "Minska barngrupperna i förskolan: högst 12 barn i småbarnsgrupper och max 15 barn för de större barnen.",
@@ -345,14 +143,13 @@ window.siteContent = {
       ]
     },
     {
-      id: "varderingar",
-      label: "Värderingar",
-      mark: "V",
-      accent: "#8aabac",
-      title: "Värderingar som håller ihop Hässleholm",
-      intro:
-        "Politiken ska handla om människor i vardagen, inte bara budgetrader och organisationsscheman.",
-      bullets: [
+      "id": "varderingar",
+      "label": "Värderingar",
+      "mark": "V",
+      "accent": "#8aabac",
+      "title": "Värderingar som håller ihop Hässleholm",
+      "intro": "Politiken ska handla om människor i vardagen, inte bara budgetrader och organisationsscheman.",
+      "bullets": [
         "Trygghet och respekt i skola, fritid, omsorg och offentliga miljöer.",
         "Uppvärdera värderingarna i skolan: dygder framför normlöshet.",
         "Värna skolavslutningar i kyrkan och traditioner som julsånger.",
@@ -363,14 +160,13 @@ window.siteContent = {
       ]
     },
     {
-      id: "motesplatser",
-      label: "Mötesplatser",
-      mark: "M",
-      accent: "#8fa45a",
-      title: "Äldre mötesplatser 2.0",
-      intro:
-        "Träffpunkter ska bli aktiva nav för gemenskap, hälsa och förebyggande arbete i hela kommunen.",
-      bullets: [
+      "id": "motesplatser",
+      "label": "Mötesplatser",
+      "mark": "M",
+      "accent": "#8fa45a",
+      "title": "Äldre mötesplatser 2.0",
+      "intro": "Träffpunkter ska bli aktiva nav för gemenskap, hälsa och förebyggande arbete i hela kommunen.",
+      "bullets": [
         "Samlat uppdrag, utvecklingsplan och underhållsplan för träffpunkter.",
         "Likvärdig service oavsett bostadsort.",
         "Förebyggande uppdrag inom gemenskap, hälsa och trygghet.",
@@ -381,14 +177,13 @@ window.siteContent = {
       ]
     },
     {
-      id: "ekonomi",
-      label: "Skattekronor",
-      mark: "K",
-      accent: "#ffd62f",
-      title: "Ansvar för varje skattekrona",
-      intro:
-        "Ordning i ekonomin beskrivs som en förutsättning för trygg välfärd. Fokus ligger på kärnuppdrag, transparens och minskad administration.",
-      bullets: [
+      "id": "ekonomi",
+      "label": "Skattekronor",
+      "mark": "K",
+      "accent": "#ffd62f",
+      "title": "Ansvar för varje skattekrona",
+      "intro": "Ordning i ekonomin beskrivs som en förutsättning för trygg välfärd. Fokus ligger på kärnuppdrag, transparens och minskad administration.",
+      "bullets": [
         "Översyn av kommunens fastighetsbestånd.",
         "Säga nej till projekt utan tydlig vardagsnytta.",
         "Samlad underhållsplan för skolor, omsorgsboenden och offentliga miljöer.",
@@ -404,14 +199,13 @@ window.siteContent = {
       ]
     },
     {
-      id: "kommun",
-      label: "Vår kommun",
-      mark: "H",
-      accent: "#f1be8a",
-      title: "Hela kommunen ska fungera på riktigt",
-      intro:
-        "Likabehandling betyder att alla tas på allvar. Programmet vill anpassa politiken efter orters olika villkor.",
-      bullets: [
+      "id": "kommun",
+      "label": "Vår kommun",
+      "mark": "H",
+      "accent": "#f1be8a",
+      "title": "Hela kommunen ska fungera på riktigt",
+      "intro": "Likabehandling betyder att alla tas på allvar. Programmet vill anpassa politiken efter orters olika villkor.",
+      "bullets": [
         "Verka för att återstarta Tyringe och Bjärnums simhallar.",
         "Erkänna skillnader mellan orter och anpassa politiken därefter.",
         "Grundpaket av service, trygghet och mötesplatser i kransorterna.",
@@ -430,14 +224,13 @@ window.siteContent = {
       ]
     },
     {
-      id: "campus",
-      label: "Campus",
-      mark: "C",
-      accent: "#8aabac",
-      title: "Campus Hässleholm: framtidens väg",
-      intro:
-        "Hässleholm ska växa genom utbildning, kompetens och samverkan mellan högre utbildning, yrkeshögskola, innovation och näringsliv.",
-      bullets: [
+      "id": "campus",
+      "label": "Campus",
+      "mark": "C",
+      "accent": "#8aabac",
+      "title": "Campus Hässleholm: framtidens väg",
+      "intro": "Hässleholm ska växa genom utbildning, kompetens och samverkan mellan högre utbildning, yrkeshögskola, innovation och näringsliv.",
+      "bullets": [
         "Arbeta för högskolefilial eller egen högskola i samarbete med lärosäten.",
         "Stegvis uppbyggt spår mot examensrätt och särskild profil.",
         "Möjliggöra student- och forskarbostäder nära campus.",
@@ -448,5 +241,171 @@ window.siteContent = {
         "Integrera yrkeshögskoleutbildningar som övergång mot arbetsliv och högre utbildning."
       ]
     }
+  ],
+  "candidates": [
+    {
+      "name": "Simon Berneblad Mandegård",
+      "role": "#1 på kommunlistan",
+      "description": "Driver frågor om äldreomsorg, trygghet och ett rikt kultur- och fritidsliv."
+    },
+    {
+      "name": "Erika Heil Utbult",
+      "role": "#2 på kommunlistan",
+      "description": "Fokuserar på omsorg, närhet och ett starkare lokalsamhälle.",
+      "imagePosition": "55% center",
+      "imageScale": 1.12
+    },
+    {
+      "name": "Christer Caesar",
+      "role": "#3 på kommunlistan",
+      "description": "Vill se ordning, ansvar och långsiktighet i kommunens ekonomi och styrning.",
+      "imagePosition": "50% center",
+      "imageScale": 1.12
+    },
+    {
+      "name": "Elias Höghäll",
+      "role": "#4 på kommunlistan",
+      "description": "Lyfter ungas villkor, framtidstro och möjligheten att växa upp och stanna i kommunen.",
+      "imagePosition": "58% 18%",
+      "imageScale": 1,
+      "imageX": "0",
+      "imageY": "0"
+    },
+    {
+      "name": "Mats Björklund",
+      "role": "#5 på kommunlistan",
+      "description": "Driver frågor om socialtansvar, service och utveckling.",
+      "imagePosition": "67% center",
+      "imageScale": 1.12,
+      "imageX": "0"
+    },
+    {
+      "name": "Pär Palmgren",
+      "role": "#6 på kommunlistan",
+      "description": "Fokuserar på infrastruktursfrågor, en kommun som förvaltar ekonomin väl och en kommun som håller ihop."
+    },
+    {
+      "name": "Roland Blomqvist",
+      "role": "#7 på kommunlistan",
+      "description": "Vill stärka samhällsplanering, infrastruktur och minska krånglet för medborgaren."
+    },
+    {
+      "name": "Tobias Eriksson",
+      "role": "#8 på kommunlistan",
+      "description": "Driver frågor om trygghet, digital säkerhet och en modernare kommunal service.",
+      "imagePosition": "50% 18%",
+      "imageScale": 1,
+      "imageX": "0",
+      "imageY": "0"
+    },
+    {
+      "name": "Marie Juhlin",
+      "role": "#9 på kommunlistan",
+      "description": "Fokuserar på vård, omsorg och trygghet för äldre och anhöriga.",
+      "imagePosition": "center center",
+      "imageX": "0",
+      "imageY": "-6%"
+    },
+    {
+      "name": "Gilbert Nathell",
+      "role": "#10 på kommunlistan",
+      "description": "Lyfter vikten av en fungerande skolgång, tryggheten och vikten av levande orter i hela kommunen.",
+      "imagePosition": "center 32%",
+      "imageScale": 1
+    }
+  ],
+  "national": [
+    {
+      "area": "Familj",
+      "title": "Gör föräldraförsäkringen mer flexibel",
+      "text": "KD vill säga nej till kvotering, skydda föräldraledigas inkomst längre och låta fler dagar användas som dubbeldagar.",
+      "source": "https://kristdemokraterna.se/var-politik/politikomraden/familj"
+    },
+    {
+      "area": "Familj",
+      "title": "Inför tak för småbarnsgrupper i förskolan",
+      "text": "KD vill lagstifta om max 12 barn i småbarnsgrupper för mer trygghet, anknytning och tid för varje barn.",
+      "source": "https://kristdemokraterna.se/var-politik/politikomraden/familj"
+    },
+    {
+      "area": "Familj",
+      "title": "Stärk föräldrastöd och familjerådgivning",
+      "text": "KD vill att kommuner ska erbjuda föräldrastödsprogram och sänka trösklarna till familjerådgivning.",
+      "source": "https://kristdemokraterna.se/var-politik/politikomraden/familj"
+    },
+    {
+      "area": "Bostad",
+      "title": "Gör bostadsmarknaden mer rörlig",
+      "text": "KD vill ta bort taket för uppskov på reavinstskatten vid ny bostad och kraftigt reducera amorteringskraven.",
+      "source": "https://kristdemokraterna.se/var-politik/politikomraden/bostad"
+    },
+    {
+      "area": "Bostad",
+      "title": "Gör det möjligt för fler att äga sitt hem",
+      "text": "KD vill använda startlån, bosparande och förändrade tomträttsregler för att fler med vanliga inkomster ska kunna äga bostad.",
+      "source": "https://kristdemokraterna.se/var-politik/politikomraden/bostad"
+    },
+    {
+      "area": "Bostad",
+      "title": "Minska krånglet för den som vill bygga",
+      "text": "KD vill förenkla regler så fler kan bygga ut, dela upp bostäder och skapa hem på redan använd tomtmark.",
+      "source": "https://kristdemokraterna.se/var-politik/politikomraden/bostad"
+    },
+    {
+      "area": "Jord & skogsbruk",
+      "title": "Öka svensk självförsörjning",
+      "text": "KD vill stärka lönsamheten i svenskt jordbruk så Sverige kan producera mer livsmedel även i fredstid.",
+      "source": "https://kristdemokraterna.se/var-politik/politikomraden/jord--skogsbruk"
+    },
+    {
+      "area": "Jord & skogsbruk",
+      "title": "Minska regelkrånglet för bönder",
+      "text": "KD vill ha färre men tydligare regler för jordbruksnäringen så lantbrukare får bättre förutsättningar att producera.",
+      "source": "https://kristdemokraterna.se/var-politik/politikomraden/jord--skogsbruk"
+    },
+    {
+      "area": "Jord & skogsbruk",
+      "title": "Värna äganderätten i skogen",
+      "text": "KD vill stå upp för enskilt ägande och brukande av skog under frihet och ansvar.",
+      "source": "https://kristdemokraterna.se/var-politik/politikomraden/jord--skogsbruk"
+    },
+    {
+      "area": "Äldre",
+      "title": "Mer medicinsk kompetens i äldreomsorgen",
+      "text": "KD vill stärka kommunal vård med bättre medicinsk kompetens och möjlighet för kommuner att säkra läkartillgång.",
+      "source": "https://kristdemokraterna.se/var-politik/politikomraden/aldre"
+    },
+    {
+      "area": "Äldre",
+      "title": "Inför äldreboendegaranti",
+      "text": "KD vill ge personer över 85 år en lagstadgad rätt till anpassat boende när de själva vill och behöver det.",
+      "source": "https://kristdemokraterna.se/var-politik/politikomraden/aldre"
+    },
+    {
+      "area": "Äldre",
+      "title": "Förbättra villkoren för omsorgspersonal",
+      "text": "KD vill minska delade turer, stärka medarbetarnöjdheten och avlasta chefer i äldreomsorgen.",
+      "source": "https://kristdemokraterna.se/var-politik/politikomraden/aldre"
+    },
+    {
+      "area": "Vård & omsorg",
+      "title": "Inrätta nationell vårdförmedling",
+      "text": "KD vill använda ledig vårdkapacitet i hela landet så patienter snabbare kan få vård när vårdgarantin passerats.",
+      "source": "https://kristdemokraterna.se/var-politik/politikomraden/vard--omsorg"
+    },
+    {
+      "area": "Vård & omsorg",
+      "title": "Fler vårdplatser och starkare kapacitet",
+      "text": "KD vill öka antalet vårdplatser och koppla statlig ersättning till minskade överbeläggningar och bättre kapacitet.",
+      "source": "https://kristdemokraterna.se/var-politik/politikomraden/vard--omsorg"
+    },
+    {
+      "area": "Vård & omsorg",
+      "title": "Ge staten huvudansvar för sjukvården",
+      "text": "KD vill samla huvudansvaret nationellt för en mer jämlik, effektiv och högkvalitativ vård i hela landet.",
+      "source": "https://kristdemokraterna.se/var-politik/politikomraden/vard--omsorg"
+    }
   ]
 };
+
+if (typeof window !== 'undefined') window.siteContent = siteContent;
