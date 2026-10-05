@@ -21,7 +21,7 @@ function safeURL(raw, { image = false } = {}) {
 }
 function link(label, href, className) { const a = el('a', label, className); a.href = safeURL(href); if (new URL(a.href).origin !== location.origin) { a.target = '_blank'; a.rel = 'noopener noreferrer'; } return a; }
 function picture(src, alt, className) { const img = el('img', undefined, className); img.src = safeURL(src, { image: true }); img.alt = alt || ''; img.loading = 'lazy'; img.decoding = 'async'; return img; }
-document.querySelectorAll('[data-text]').forEach(node => { node.textContent = c.text[node.dataset.text] ?? ''; });
+document.querySelectorAll('[data-text]').forEach(node => { const text = c.text[node.dataset.text] ?? ''; if (node.textContent !== text) node.textContent = text; });
 let returnFocus;
 const dialog = $('#info-dialog');
 function openDialog(title, nodes) { returnFocus = document.activeElement; $('#dialog-title').textContent = title; $('#dialog-body').replaceChildren(...nodes); dialog.showModal(); }
@@ -36,7 +36,7 @@ function showContact() {
   const phone = $('#dialog-body p:last-of-type'); phone.replaceChildren(link(d.phone, '#')); phone.firstChild.href = `tel:${d.phone.replace(/[^+\d]/g, '')}`;
 }
 function navItem(item) { const node = link(item.label, item.href || c.links[item.link], item.primary ? 'button' : ''); if (item.link === 'membership') node.removeAttribute('target'); return node; }
-$('#navigation').replaceChildren(...c.navigation.map(navItem));
+if (!$('#navigation').children.length) $('#navigation').replaceChildren(...c.navigation.map(navItem));
 $('#navigation').querySelectorAll('a').forEach(a=>{if(new URL(a.href).pathname===location.pathname && !new URL(a.href).hash)a.setAttribute('aria-current','page');});
 $('#footer-navigation').replaceChildren(...c.footerNavigation.map(navItem));
 const footerBrand = $('.site-footer .brand');
@@ -198,9 +198,9 @@ async function initSubpage() {
   const s=c.subpages,t=s.text,page=document.body.dataset.page;
   const area=s.areas.find(a=>a.id===document.body.dataset.area);
   const hero=page==='media'?{title:'I MEDIA',intro:'Det lokala arbetet.\nDe större perspektiven.',image:s.heroes.news.image,alt:s.heroes.news.alt}:page==='area'?{title:area.title.toLocaleUpperCase('sv-SE'),intro:t.areaIntro,image:area.image,alt:area.alt}:s.heroes[document.body.classList.contains('home-page')?'home':page];
-  $('#sub-title').textContent=hero.title;$('#sub-intro').textContent=hero.intro;$('#sub-image').src=hero.image;$('#sub-image').alt=hero.alt;$('#sub-image').style.objectPosition=hero.position||'center';
+  if ($('#sub-title').textContent!==hero.title) $('#sub-title').textContent=hero.title;if ($('#sub-intro').textContent!==hero.intro) $('#sub-intro').textContent=hero.intro;$('#sub-image').src=hero.image;$('#sub-image').alt=hero.alt;$('#sub-image').style.objectPosition=hero.position||'center';
   if (!document.body.classList.contains('home-page')) document.title=hero.title.replaceAll('\n',' ')+' – KD Hässleholm';
-  if(page==='area') {$('#breadcrumbs').hidden=false;$('#breadcrumbs').append(link('Vår politik','/politik.html'),el('span',' / '+area.title));}
+  if(page==='area') {$('#breadcrumbs').hidden=false;$('#breadcrumbs').replaceChildren(link('Vår politik','/politik.html'),el('span',' / '+area.title));}
   const local=['localhost','127.0.0.1','[::1]'].includes(location.hostname)&&new URLSearchParams(location.search).get('data')!=='live';
   const published=publishedArticles(s.articles);
   const articles=(published.length?published:local?s.exampleArticles.map(a=>({...a,example:true})):[]).filter(a=>a.category!=='Gruppledaren'&&generatedArticlePaths.includes(articlePath(a))).sort((a,b)=>(b.date||'').localeCompare(a.date||''));
@@ -217,17 +217,19 @@ async function initSubpage() {
     const read=link(t.readArticle,href,'text-button');read.setAttribute('aria-label',`${t.readArticle.replace(' →','')}: ${article.title}`);copy.append(read);card.append(copy);return card;
   }
   if(page==='news') {
-    let filter=location.hash==='#i-media'?'I media':location.hash==='#debatt'?'Debatt':'Alla',count=3,mediaStarted=false;
+    let filter=location.hash==='#i-media'?'I media':location.hash==='#debatt'?'Debatt':'Alla',count=document.body.classList.contains('home-page')||location.hash?3:articles.length,mediaStarted=false;
     const mediaRoot=el('section');mediaRoot.id='media-root';mediaRoot.hidden=true;mediaRoot.setAttribute('aria-label','I media');$('#news-more').after(mediaRoot);
-    const render=()=>{const media=filter==='I media';mediaRoot.hidden=!media;$('#news-grid').hidden=media;$('#news-notice').hidden=media;const items=articles.filter(a=>filter==='Alla'||a.category===filter);$('#news-grid').replaceChildren(...items.slice(0,count).map(a=>articleCard(a)));$('#news-notice').textContent=items.some(a=>a.example)?t.newsExample:!items.length?t.newsEmpty:filter==='Debatt'?`${items.length} debattartiklar · Senaste först`:'';$('#news-more').hidden=media||count>=items.length;if(media&&!mediaStarted){mediaStarted=true;initMedia(mediaRoot);}};
-    for(const label of [...t.newsFilters,'I media']){const b=el('button',label);b.setAttribute('aria-pressed',String(label===filter));b.addEventListener('click',()=>{filter=label;count=3;history.replaceState(null,'',location.pathname+location.search+(filter==='I media'?'#i-media':filter==='Debatt'?'#debatt':''));$('#news-filters').querySelectorAll('button').forEach(n=>n.setAttribute('aria-pressed',String(n===b)));render();});$('#news-filters').append(b);}
+    const render=()=>{const media=filter==='I media';mediaRoot.hidden=!media;$('#news-grid').hidden=media;$('#news-notice').hidden=media;const items=articles.filter(a=>filter==='Alla'||a.category===filter);const shown=items.slice(0,count);const grid=$('#news-grid');if(grid.children.length!==shown.length||shown.some((a,i)=>grid.children[i]?.querySelector('.news-copy h2 a')?.getAttribute('href')!==articlePath(a)))grid.replaceChildren(...shown.map(a=>articleCard(a)));$('#news-notice').textContent=items.some(a=>a.example)?t.newsExample:!items.length?t.newsEmpty:filter==='Debatt'?`${items.length} debattartiklar · Senaste först`:'';$('#news-more').hidden=media||count>=items.length;if(media&&!mediaStarted){mediaStarted=true;initMedia(mediaRoot);}};
+    const initialFilters=[...$('#news-filters').children];
+    for(const label of [...t.newsFilters,'I media']){const b=initialFilters.find(b=>b.textContent===label)||el('button',label);b.setAttribute('aria-pressed',String(label===filter));b.addEventListener('click',()=>{filter=label;count=3;history.replaceState(null,'',location.pathname+location.search+(filter==='I media'?'#i-media':filter==='Debatt'?'#debatt':''));$('#news-filters').querySelectorAll('button').forEach(n=>n.setAttribute('aria-pressed',String(n===b)));render();});if(!b.isConnected)$('#news-filters').append(b);}
     $('#news-more').textContent=t.moreNews;$('#news-more').addEventListener('click',()=>{count+=3;render();});render();
   }
   if(page==='media') initMedia($('#media-root'));
   if(page==='politics') initPoliticsExplorer(c);
   if(page==='area') {
     $('#proposals-heading').textContent='Våra förslag från 2026';$('#related-heading').textContent=t.related;
-    $('#proposals-heading').after(el('p','Lokal politik ur valprogrammet som antogs den 26 maj 2026.','policy-period'));
+    if (!$('#proposals-heading').parentElement.querySelector('.policy-period')) $('#proposals-heading').after(el('p','Lokal politik ur valprogrammet som antogs den 26 maj 2026.','policy-period'));
+    $('#area-proposals').replaceChildren();
     for(const [i,group] of area.groups.entries()) {const topic=c.politics.topics.find(p=>p.id===group.topic);const details=el('details',undefined,'proposal');details.open=i===0;const summary=el('summary',group.title);const list=el('ul');const bullets=topic.bullets.filter(b=>!group.include||group.include.some(term=>b.toLocaleLowerCase('sv-SE').includes(term)));list.append(...bullets.map(b=>el('li',b)));details.append(summary,list);$('#area-proposals').append(details);}
     const source=el('p',undefined,'policy-source');source.append(link('Läs hela valprogrammet 2026 (PDF) →',c.links.program));$('#area-proposals').after(source);
     if(area.id==='landsbygd'){const rural=el('p',undefined,'policy-source');rural.append(link('Fördjupning: landsbygdsprogrammet från 2023 (Word) →','/program/landsbygdsprogram-2023.docx'));source.after(rural);}

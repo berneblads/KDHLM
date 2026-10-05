@@ -1,4 +1,3 @@
-import './media.css';
 
 const node = (tag, text, className) => {
   const element = document.createElement(tag);

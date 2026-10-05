@@ -1,10 +1,13 @@
-@font-face{font-family:Barlow;src:url('./assets/fonts/barlow-latin-400-normal.woff2') format('woff2');font-weight:400;font-display:swap}
-@font-face{font-family:Barlow;src:url('./assets/fonts/barlow-latin-500-normal.woff2') format('woff2');font-weight:500;font-display:swap}
-@font-face{font-family:Barlow;src:url('./assets/fonts/barlow-latin-600-normal.woff2') format('woff2');font-weight:600;font-display:swap}
-@font-face{font-family:Barlow;src:url('./assets/fonts/barlow-latin-700-normal.woff2') format('woff2');font-weight:700;font-display:swap}
-@font-face{font-family:'Barlow Condensed';src:url('./assets/fonts/barlow-condensed-latin-700-normal.woff2') format('woff2');font-weight:700;font-display:swap}
-@font-face{font-family:'Barlow Condensed';src:url('./assets/fonts/barlow-condensed-latin-800-normal.woff2') format('woff2');font-weight:800;font-display:swap}
-@font-face{font-family:Lora;src:url('./assets/fonts/lora-latin-400-italic.woff2') format('woff2');font-style:italic;font-display:swap}
+@import './policy-focus.css';
+@import './media.css';
+html.fonts-loading body{visibility:hidden}
+@font-face{font-family:Barlow;src:url('./assets/fonts/barlow-latin-400-normal.woff2') format('woff2');font-weight:400;font-display:optional}
+@font-face{font-family:Barlow;src:url('./assets/fonts/barlow-latin-500-normal.woff2') format('woff2');font-weight:500;font-display:optional}
+@font-face{font-family:Barlow;src:url('./assets/fonts/barlow-latin-600-normal.woff2') format('woff2');font-weight:600;font-display:optional}
+@font-face{font-family:Barlow;src:url('./assets/fonts/barlow-latin-700-normal.woff2') format('woff2');font-weight:700;font-display:optional}
+@font-face{font-family:'Barlow Condensed';src:url('./assets/fonts/barlow-condensed-latin-700-normal.woff2') format('woff2');font-weight:700;font-display:optional}
+@font-face{font-family:'Barlow Condensed';src:url('./assets/fonts/barlow-condensed-latin-800-normal.woff2') format('woff2');font-weight:800;font-display:optional}
+@font-face{font-family:Lora;src:url('./assets/fonts/lora-latin-400-italic.woff2') format('woff2');font-style:italic;font-display:optional}
 :root{--blue:#005EA1;--navy:#00263E;--sky:#0090DA;--beige:#F2F3EE;--beige-mid:#EAE9E0;--beige-dark:#DDDBD2;--white:#FFF;--muted:#52616a;--line:#d8dcd9;--content:776px;--gutter:24px;--space:32px;--radius:2px;--body:Barlow,Arial,sans-serif;--heading:'Barlow Condensed','Arial Narrow',sans-serif}
 *{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:20px}body{margin:0;color:var(--navy);background:var(--white);font:15px/1.5 var(--body)}button,input,a{-webkit-tap-highlight-color:transparent}button,a{touch-action:manipulation}button{font:inherit;cursor:pointer}a{color:var(--blue);text-underline-offset:4px}img{display:block;max-width:100%;height:auto}button{color:inherit}button:disabled{opacity:.5;cursor:default}a:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid var(--sky);outline-offset:4px}h1,h2,h3,p,figure,blockquote{margin:0}h1,h2,h3{font-family:var(--heading);line-height:1.08;font-weight:700}h2{font-size:34px}h3{font-size:24px}p+p{margin-top:12px}.container{width:min(var(--content),calc(100% - var(--gutter)*2));margin-inline:auto}.eyebrow{font-size:11px;letter-spacing:.09em;line-height:1.4;font-weight:500;margin-bottom:8px}.button{display:inline-flex;align-items:center;justify-content:center;gap:12px;min-height:39px;padding:9px 19px;border:1px solid var(--blue);border-radius:var(--radius);background:var(--blue);color:white;text-decoration:none;font-size:13px;font-weight:600;line-height:1.4;transition:background .18s}.button:hover{background:#004b80}.button-outline{background:transparent;color:var(--blue)}.button-outline:hover{background:#e2edf3}.button-light{background:var(--beige);color:var(--navy);border-color:var(--beige)}.button-light:hover{background:white}.text-link{font-weight:600}.centered{display:flex;margin:24px auto 0}[hidden]{display:none!important}.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}.skip-link{position:fixed;top:-70px;left:12px;z-index:100;background:white;padding:12px}.skip-link:focus{top:12px}
 .site-header{height:64px;background:white}.header-inner{height:100%;display:flex;justify-content:space-between;align-items:center;gap:24px}.brand{display:block;flex:none;width:142px}.brand img{width:100%;height:auto}.site-header nav{display:flex;align-items:center;gap:28px}.site-header nav a,.site-header nav button:not(.button){padding:8px 0;border:0;background:none;color:var(--navy);text-decoration:none;font-size:12px;font-weight:500}.site-header nav a:hover,.site-header nav button:hover{text-decoration:underline}.site-header nav .button{margin-left:10px;min-width:111px;min-height:36px}.menu-toggle{display:none}
@@ -70,7 +73,7 @@ dialog{border:0;border-radius:3px;color:var(--navy);padding:32px;max-width:520px
 @media(max-width:360px){.area-tile{gap:13px;padding:17px 15px}.area-tile strong{font-size:23px}.area-tile .line-icon{width:34px;height:34px}.area-tile span span{font-size:12px}}
 
 /* Reference layout: broad content, condensed type, warm banners and blue footer. */
-@font-face{font-family:'Barlow Condensed';src:url('./assets/fonts/barlow-condensed-latin-400-normal.woff2') format('woff2');font-weight:400;font-display:swap}
+@font-face{font-family:'Barlow Condensed';src:url('./assets/fonts/barlow-condensed-latin-400-normal.woff2') format('woff2');font-weight:400;font-display:optional}
 .subpage{--navy:#002451;--body:'Barlow Condensed','Arial Narrow',sans-serif;--content:1104px;--line:#e0e4e8;width:100%;margin-inline:auto;font-size:18px;line-height:1.3}
 .subpage .container{width:92%;max-width:var(--content)}
 .subpage .site-header{height:80px}
@@ -346,7 +349,7 @@ dialog{border:0;border-radius:3px;color:var(--navy);padding:32px;max-width:520px
 .subpage.home-page .sub-hero #sub-image{position:absolute;inset:0;width:100%;height:100%;mask-image:none;z-index:-4}
 .subpage.home-page .hero-portrait{position:absolute;right:max(24px,calc((100% - 1040px)/2));bottom:0;width:auto;height:100%;max-width:none;z-index:0;pointer-events:none}
 .subpage.home-page .hero-portrait-pair{right:max(0px,calc((100% - 1180px)/2));bottom:-42%;height:190%}
-.subpage.home-page .sub-hero-inner::before{content:'';position:absolute;inset:0;z-index:-3;background:url('./assets/Sverigedrommen-bakgrund.webp') center/cover no-repeat;opacity:.25;pointer-events:none}
+.subpage.home-page .sub-hero-inner::before{content:'';position:absolute;inset:0;z-index:-3;background:url('./assets/hero-background.webp') center/cover no-repeat;opacity:.25;pointer-events:none}
 .subpage.home-page .sub-hero-inner::after{content:'';position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,rgba(0,24,52,.82),rgba(0,24,52,.5) 48%,rgba(0,24,52,.1));pointer-events:none}
 .subpage.home-page .sub-hero-copy{width:min(58%,620px);margin-left:max(32px,calc((100% - 1040px)/2));padding:62px 24px 62px 0;color:white}
 .subpage.home-page .sub-hero h1{font-size:clamp(48px,6vw,76px);transform:none;width:auto;letter-spacing:-1px;line-height:1.02;text-shadow:0 2px 10px #00183440}
@@ -456,7 +459,7 @@ dialog{border:0;border-radius:3px;color:var(--navy);padding:32px;max-width:520px
 .subpage.photo-hero .hero-ornament{display:none}
 .subpage.photo-hero .sub-hero-inner{min-height:370px;isolation:isolate;justify-content:flex-start}
 .subpage.photo-hero .sub-hero #sub-image{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;mask-image:none;z-index:-3}
-.subpage.photo-hero .sub-hero-inner::before{content:'';position:absolute;inset:0;z-index:-2;background:url('./assets/Sverigedrommen-bakgrund.webp') center/cover no-repeat;opacity:.25;pointer-events:none}
+.subpage.photo-hero .sub-hero-inner::before{content:'';position:absolute;inset:0;z-index:-2;background:url('./assets/hero-background.webp') center/cover no-repeat;opacity:.25;pointer-events:none}
 .subpage.photo-hero .sub-hero-inner::after{content:'';position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,rgba(0,24,52,.82),rgba(0,24,52,.5) 48%,rgba(0,24,52,.1));pointer-events:none}
 .subpage.photo-hero .sub-hero-copy{width:80%;padding:62px 8%;color:white;text-shadow:0 2px 8px #00183460}
 .subpage.photo-hero .sub-hero h1{font-size:clamp(48px,6vw,76px);transform:none;width:auto;letter-spacing:-1px;line-height:1.02}
@@ -479,7 +482,7 @@ dialog{border:0;border-radius:3px;color:var(--navy);padding:32px;max-width:520px
 
 /* Seamless header overlay and gentle interactions. */
 .debate-image{position:relative;isolation:isolate}
-.debate-image::before{content:'';position:absolute;inset:0;z-index:1;background:url('./assets/Sverigedrommen-bakgrund.webp') center/cover no-repeat;opacity:.25;pointer-events:none}
+.debate-image::before{content:'';position:absolute;inset:0;z-index:1;background:url('./assets/hero-background.webp') center/cover no-repeat;opacity:.25;pointer-events:none}
 .debate-image::after{content:'';position:absolute;inset:0;z-index:2;background:linear-gradient(90deg,rgba(0,24,52,.82),rgba(0,24,52,.5) 48%,rgba(0,24,52,.1));pointer-events:none}
 .article-cover-image{overflow:hidden;border-radius:4px}
 .article-cover-image img{display:block}

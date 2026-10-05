@@ -14,6 +14,9 @@ export function renderArchiveCard(article) {
 }
 
 export function renderSEOPage(html, path, content) {
+  // Keep the first visible layout stable while the small local fonts settle.
+  // Reveal promptly even when a font request fails or the connection is slow.
+  html = html.replace('</head>', `<script>document.documentElement.classList.add('fonts-loading');const revealFonts=()=>document.documentElement.classList.remove('fonts-loading');setTimeout(revealFonts,1500);document.addEventListener('DOMContentLoaded',()=>document.fonts.ready.then(revealFonts,revealFonts),{once:true});</script></head>`);
   if (/class="[^"]*article-page/.test(html)) return html;
   const c = content, url = new URL(path === '/index.html' ? '/' : path, c.siteURL).href;
   const page = html.match(/data-page="([^"]+)"/)?.[1];
@@ -21,12 +24,23 @@ export function renderSEOPage(html, path, content) {
   if (home) html = html.replace(/(<a class="brand"[^>]*>)<img[^>]*>/, (_, start) => `${start}<img src="${e(assetPath(c.images.whiteLogo))}" width="65" height="65" alt="KD"><span>${e(c.brandName)}</span>`);
   const areaId = html.match(/data-area="([^"]+)"/)?.[1];
   const area = c.subpages.areas.find(a => a.id === areaId);
-  const hero = home ? c.subpages.heroes.home : page === 'area' && area ? { title: area.title, intro: area.subtitle, image: area.image, alt: area.alt } : c.subpages.heroes[page];
+  const hero = home ? c.subpages.heroes.home : page === 'media' ? {title:'I MEDIA',intro:'Det lokala arbetet.\nDe större perspektiven.',image:c.subpages.heroes.news.image,alt:c.subpages.heroes.news.alt} : page === 'area' && area ? { title: area.title.toLocaleUpperCase('sv-SE'), intro: c.subpages.text.areaIntro, image: area.image, alt: area.alt } : c.subpages.heroes[page];
   const fill = (id, text) => { html = html.replace(new RegExp(`(<[^>]+id="${id}"[^>]*>)(</[^>]+>)`), (_, start, end) => start + e(text) + end); };
   html = html.replace(/(<([a-z0-9]+)\b[^>]*data-text="([^"]+)"[^>]*>)(<\/\2>)/g, (match,start,tag,key,end)=>c.text[key]===undefined?match:start+e(c.text[key])+end);
   if (hero) {
     fill('sub-title', hero.title); fill('sub-intro', hero.intro);
-    html = html.replace(/<img id="sub-image"[^>]*>/, `<img id="sub-image" src="${e(assetPath(hero.image))}" width="1200" height="800" alt="${e(hero.alt)}" fetchpriority="high">`);
+    html = html.replace(/<img id="sub-image"[^>]*>/, `<img id="sub-image" src="${e(assetPath(hero.image))}" width="1200" height="800" alt="${e(hero.alt)}" style="object-position:${e(hero.position||'center')}" fetchpriority="high">`);
+  }
+  if (page === 'area' && area) {
+    html = html.replace('<nav id="breadcrumbs" aria-label="Brödsmulor" hidden></nav>', `<nav id="breadcrumbs" aria-label="Brödsmulor"><a href="/politik.html">Vår politik</a><span> / ${e(area.title)}</span></nav>`);
+    fill('proposals-heading', 'Våra förslag från 2026');
+    fill('related-heading', c.subpages.text.related);
+    const proposals = area.groups.map((group, index) => {
+      const topic = c.politics.topics.find(topic => topic.id === group.topic);
+      const bullets = topic.bullets.filter(bullet => !group.include || group.include.some(term => bullet.toLocaleLowerCase('sv-SE').includes(term)));
+      return `<details class="proposal"${index===0?' open':''}><summary>${e(group.title)}</summary><ul>${bullets.map(bullet=>`<li>${e(bullet)}</li>`).join('')}</ul></details>`;
+    }).join('');
+    html = html.replace('<div id="area-proposals"></div>', `<p class="policy-period">Lokal politik ur valprogrammet som antogs den 26 maj 2026.</p><div id="area-proposals">${proposals}</div>`);
   }
   const nav = items => items.map(item => `<a${item.primary?' class="button"':''} href="${e(item.href || c.links[item.link])}">${e(item.label)}</a>`).join('');
   html = html.replace(/(<nav id="navigation"[^>]*>)(<\/nav>)/, `$1${nav(c.navigation)}$2`);
@@ -38,10 +52,12 @@ export function renderSEOPage(html, path, content) {
     html = html.replace('<div id="national-politics"></div>', `<div id="national-politics">${c.politics.national.map(item=>`<article class="national-item"><h3>${e(item.title)}</h3><p>${e(item.text)}</p><a href="${e(item.source)}">Läs mer hos Kristdemokraterna</a></article>`).join('')}</div>`);
     html = html.replace(/<a class="button" id="program-link"/, `<a href="${e(c.links.program)}" class="button" id="program-link"`);
   }
-  const articles = publishedArticles(c.subpages.articles).sort((a,b)=>(b.date||'').localeCompare(a.date||''));
+  const articles = publishedArticles(c.subpages.articles).filter(a=>a.category!=='Gruppledaren').sort((a,b)=>(b.date||'').localeCompare(a.date||''));
   if (page === 'news') {
     const visible = home ? articles.slice(0, 3) : articles;
     html = html.replace('<div id="news-grid" class="news-grid"></div>', `<div id="news-grid" class="news-grid">${visible.map(renderArchiveCard).join('')}</div>`);
+    html = html.replace('<div id="news-filters" class="pill-filters" aria-label="Filtrera artiklar"></div>', `<div id="news-filters" class="pill-filters" aria-label="Filtrera artiklar">${[...c.subpages.text.newsFilters,'I media'].map(label=>`<button aria-pressed="${label==='Alla'}">${e(label)}</button>`).join('')}</div>`);
+    html = html.replace('<button id="news-more" class="button button-outline centered"></button>', `<button id="news-more" class="button button-outline centered"${visible.length>=articles.length?' hidden':''}>${e(c.subpages.text.moreNews)}</button>`);
     if (home) html = html.replace('<button id="news-more"', '<p class="news-archive-link"><a href="/aktuellt.html">Alla artiklar och debattinlägg →</a></p><button id="news-more"');
   }
   const title = home ? siteName : html.match(/<title>([^<]+)<\/title>/)?.[1] || siteName;

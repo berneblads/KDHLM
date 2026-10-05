@@ -1,5 +1,3 @@
-import './policy-focus.css';
-
 const element = (tag, text, className) => {
   const node = document.createElement(tag);
   if (text !== undefined) node.textContent = text;
